@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Do Algorithms Care?</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_import/styles.7c3ba4e1.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_import/styles.7c3ba4e1.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_node/d3-dsv@3.0.1/index.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.14/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+import {registerFile} from "./_observablehq/stdlib.js";
+
+registerFile("./data/study_data.csv", {"name":"./data/study_data.csv","mimeType":"text/csv","path":"./_file/data/study_data.2d7fae66.csv","lastModified":1718138592467});
+
+define({id: "9f194890", inputs: ["FileAttachment"], outputs: ["utcParse","d3","csvFormat","parseDate","coerceRow","surveyData"], body: async (FileAttachment) => {
+const [{utcParse}, d3, {csvFormat}] = await Promise.all([import("./_npm/d3-time-format@4.1.0/_esm.js"), import("./_npm/d3@7.9.0/_esm.js"), import("./_node/d3-dsv@3.0.1/index.js")]);
+const parseDate = utcParse("%m/%d/%Y");
+const coerceRow = (d) => ({date: parseDate(d.date),
+                        //variable: d.variable,
+                        //y: Number(d.y)});
+                        //steps: Number(d.steps),
+                        //fatigue: Number(d.fatigue),
+                        value: Number(d.value),
+                        name: d.name});
+//const correlations  = FileAttachment("data/correlations.csv").csv({typed: true})
+const surveyData = FileAttachment("./data/study_data.csv").csv({typed: true}).then((D) => D.map(coerceRow));
+//const launches = FileAttachment("data/launches.csv").csv({typed: true});
+return {utcParse,d3,csvFormat,parseDate,coerceRow,surveyData};
+}});
+
+define({id: "3c5d0e4a", inputs: ["display","surveyData","Plot"], outputs: ["FatiguePlot","correlationPlot"], body: (display,surveyData,Plot) => {
+//display(surveyData)
+display(FatiguePlot(surveyData))
+function FatiguePlot(data, {width} = {}) {
+  return Plot.plot({
+    //title: "Experienced Fatigue",
+    width,
+    marginRight: 100,
+    marginLeft: 75,
+    marginTop:50,
+    //marginRight: 70,
+    y: {type: "time", ticks: "day", label: null},
+    x: {anchor: 'top'},
+    fx: {axis:null},
+    fill: {label: null},
+    //x: {grid: true, inset: 10, label: "Level of Fatigue", type:"point",domain: [1,2,3,4, 5]},
+    height: 700,
+    width: 1000,
+    //facet: {label: null},
+    //y:{grid:true},
+    //facet: {marginRight: 79},
+    marks: [
+        Plot.gridX({strokeDasharray: "2",strokeWidth:1, stroke: '#fcddc9',interval:1, opacity:.5}),
+        //Plot.rectX({length: 1}, {y1: 0, y2: 1.4, fill: "red", fillOpacity: 0.3}),
+        Plot.axisX({anchor: "top", grid:true}),
+        //Plot.text(data, {x: "value", y: "date", text: 'value',fx:'name', dx: 6, lineAnchor: "bottom", rotate:90}),
+        //Plot.text(data, {'name', frameAnchor: "top-left", dx: 6, dy: 6}),
+        Plot.areaX(data, {
+        x: "value",
+        fx: "name",
+        y: "date",
+        fill: '#fcddc9',
+        clip: false
+      }),
+      Plot.text([`How fatigued were you today?`,`Overall how did you feel today?`,`How difficult was it to dress and shower today?`,
+        `How difficult was it to climb stairs today?`,`How difficult was it to complete common daily activities?`,
+        `How difficult was it to complete common daily activities?`,`Do you have an active and visible rash?`
+      ], {
+      fx: ["fatigue","wellness","dress_shower","stairs","common","pain","rash"],
+      frameAnchor: "top-left",
+      lineWidth: 5,
+      rotate: 90,
+      dx: 12,
+      fill: 'black',
+      dy: 3,
+      lineWidth:300,
+    }),
+      //Plot.axisFx({ label: null, tickRotate: 90, inset:50, color: 'black'}),
+
+    //Plot.barX(data, {x: "fatigue", y: "steps", fill: "green", dx: -2, dy: -2, facet:"include"})
+    //Plot.text(data, Plot.selectLast({x: "date", y: "value", z: "name", text: "name", textAnchor: "start"}))
+    ]
+  });
+}
+function correlationPlot(correlations, {width} = {}){
+return(Plot.plot({
+  x: {tickRotate: -90},
+  marginBottom: 200,
+  marginLeft: 200,
+  width: width,
+  label: null,
+  color: { scheme: "PRGn", pivot: 0, legend: true, label: "cor" },
+  marks: [
+    Plot.cell(correlations, { x: "v1", y: "v2", fill: "cor" }),
+    Plot.text(correlations, {
+      x: "v1",
+      y: "v2",
+      text: (d) => d.cor.toFixed(2),
+      fill: (d) => (Math.abs(d.cor) > 0.6 ? "white" : "black")
+    })
+  ]
+}))
+}
+
+
+// display(Plot.plot({
+//   x: {
+//     //ticks: simpsons.filter((d) => d.number_in_season === 1).map((d) => d.id),
+//     //tickFormat: (x) => simpsons.find((d) => d.id === x).season,
+//     label: "Days",
+//     labelAnchor: "right",
+//     labelArrow: true,
+//     tickRotate:-90
+//   },
+//   color: {
+//     type: "linear",
+//     scheme: "PiYG"
+//   },
+//   marks: [
+//     Plot.cell(surveyData, {x: "date",fill: "fatigue"})
+//   ]
+// }))
+return {FatiguePlot,correlationPlot};
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Do Algorithms Care?</a></li>
+  </ol>
+  <section class="observablehq-section-active">
+    <summary></summary>
+    <ol>
+    <li class="observablehq-link"><a href="./protocol">Protocol</a></li>
+    <li class="observablehq-link"><a href="./sensor-kit">Apricot Sensor-Kit N2</a></li>
+    <li class="observablehq-link"><a href="./research">Research</a></li>
+    <li class="observablehq-link"><a href="./code">Code</a></li>
+    <li class="observablehq-link"><a href="./about">About</a></li>
+    <li class="observablehq-link"><a href="./emg_data">EMG Data</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./example-dashboard">Survey Data Visualisation</a></li>
+    </ol>
+  </section>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<style>
+  body, svg {
+     font-family: var(--sans-serif);
+  }
+</style>
+<div class="hero">
+<h1> Survey Data Visualisation </h1>
+</div>
+<!-- Load and transform the data -->
+<div id="cell-9f194890" class="observablehq observablehq--block"></div>
+<!-- A shared color scale for consistency, sorted by the number of launches -->
+<div id="cell-3c5d0e4a" class="observablehq observablehq--block"></div>
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-06-19T22:11:46">Jun 19, 2024</a>.</div>
+</footer>
+</div>

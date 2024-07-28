@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Study Protocol | Do Algorithms Care?</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_import/styles.7c3ba4e1.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_import/styles.7c3ba4e1.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<script type="module">
+
+import "./_observablehq/client.js";
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Do Algorithms Care?</a></li>
+  </ol>
+  <section class="observablehq-section-active">
+    <summary></summary>
+    <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./protocol">Protocol</a></li>
+    <li class="observablehq-link"><a href="./sensor-kit">Apricot Sensor-Kit N2</a></li>
+    <li class="observablehq-link"><a href="./research">Research</a></li>
+    <li class="observablehq-link"><a href="./code">Code</a></li>
+    <li class="observablehq-link"><a href="./about">About</a></li>
+    <li class="observablehq-link"><a href="./emg_data">EMG Data</a></li>
+    <li class="observablehq-link"><a href="./example-dashboard">Survey Data Visualisation</a></li>
+    </ol>
+  </section>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#variables-to-be-collected">Variables to be Collected</a></li>
+<li class="observablehq-secondary-link"><a href="#muscle-data-measurement-protocol">Muscle Data Measurement Protocol</a></li>
+<li class="observablehq-secondary-link"><a href="#survey">Survey</a></li>
+</ol>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&amp;display=swap" rel="stylesheet">
+<style>
+.row {
+  display: flex;
+}
+.column {
+  flex: 50%;
+}
+</style>
+<h1 id="study-protocol" tabindex="-1"><a class="observablehq-header-anchor" href="#study-protocol">Study Protocol</a></h1>
+<p><sup><em>Last edited: June 14th, 2024</em></sup></p>
+<h2 id="variables-to-be-collected" tabindex="-1"><a class="observablehq-header-anchor" href="#variables-to-be-collected">Variables to be Collected</a></h2>
+<ul>
+<li>Muscle Data [2x per day - one time in the morning after waking up, one time in the evening]
+<ul>
+<li>EMG measurements</li>
+<li>MMG measurements</li>
+</ul>
+</li>
+<li>Survey data [1x per day - in the evening]</li>
+<li>Step count [1x per day - in the evening]</li>
+</ul>
+<h2 id="muscle-data-measurement-protocol" tabindex="-1"><a class="observablehq-header-anchor" href="#muscle-data-measurement-protocol">Muscle Data Measurement Protocol</a></h2>
+<p>We use a  <a href="https://www.pluxbiosignals.com/collections/bitalino/products/bitalino-revolution-plugged-kit-ble-bt" target="_blank" rel="noopener noreferrer">BITalino (r)evolution board</a> with an EMG sensor, an MMG sensor and a button. See HERE for instructions on how to build your own.</p>
+<p>For the protocol time tracking we found it helpful to use an interval time tracking app - in our case we are using <a href="https://apps.apple.com/us/app/totally-tabata-timer-protocol/id856659483" target="_blank" rel="noopener noreferrer">'TotallyTabata'</a>, as the app allows to set custom intervals including voice announcements.</p>
+<ol>
+<li>Connect Bitalino device to Opensignals</li>
+<li>Attach electrodes to cables</li>
+<li>Clean skin where the electrodes will be positioned, i.e. on the knee cap and the vastus lateralis</li>
+<li>Position measurement electrodes:
+<ul>
+<li>Red: ~ 1/3 of the distance between the knee (patella) and the point where the hip bone starts to bend inwards (anterior superior iliac spine)</li>
+<li>Black: Above the red one, centers of the electrodes should be ~ 2cm apart</li>
+<li>White: On the bone part of the knee</li>
+</ul>
+</li>
+</ol>
+<div class="grid grid-cols-2">
+  <div class="card"> 
+  <img src="./_file/images/muscle_info.a694eee0.png" alt="drawing" width="200">
+</div>
+ <div class="card"> 
+  <img src="./_file/images/start.35e4904c.jpeg" alt="drawing" width="300">
+</div>
+</div>
+ <!-- as in [Smith et al 2017](https://doi.org/10.1002/mus.25502) - see drawing -->
+<ol start="5">
+<li>Start Opensignals recording</li>
+<li>Sit down on the floor, against a wall, legs straight, hands hanging loosly on the side (make sure they don't touch your leg!)</li>
+<li>Keep muscles relaxed. At the same time start protocol tracking app &amp; push button on the Bitalino device.</li>
+<li>Follow Protocol:</li>
+</ol>
+<div class="row">
+  <div class="column"><img src="./_file/images/protocol.6e258804.jpg" alt="drawing" width="400"></div>
+  <div class="column"> 
+  <ol>
+  <li>Sit relaxed for 30s</li>
+  <li>Try to maximally contract your upper leg muscles as much as possible for 3 x  6s with 10s break in between (see also <a href="https://www.sciencedirect.com/science/article/pii/S0165027009002015" target="_blank" rel="noopener noreferrer">Hendrix et al (2009) </a> )</li>
+  <li>Stand up and take wall sit position, 90 degree angle (30s) (this is a form of isometric muscle contraction and according to <a href="https://doi.org/10.1145/3648679" target="_blank" rel="noopener noreferrer"> Li et al. 2024 </a>, this is the type of exercise most often used in fatigure detection based on EMG; also wall sit is an <a href="https://www.yourhousefitness.com/blog/exercise-tutorial-wall-sit#google_vignette" target="_blank" rel="noopener noreferrer"> exercise that engages the vastus lateralis </a>; similarly <a href="https://www.aaem.pl/pdf-81716-26429?filename=Differences%20in.pdf" target="_blank" rel="noopener noreferrer"> Gawda et al 2018 </a> ask runners to perform 60s squats to measure fatigue)</li>
+  <li>Sit down again, back agains the wall, legs straight (30s)</li>
+</ol>
+</div>
+</div>
+<div class="grid grid-cols-4">
+  <div class="card"> 
+ <center> <h3>Sit Relaxed </h3>
+  <img src="./_file/images/sit_relaxed.9c21ddb1.jpeg" alt="drawing" width="300"></center>
+</div>
+  <div class="card"> 
+  <center> <h3>Wallsit </h3>
+  <img src="./_file/images/wallsit.b1a4cc0d.jpeg" alt="drawing" width="200"> </center>
+  </div>
+  <div class="card"> 
+  <center> <h3>Contraction </h3>
+  <video src="./_file/images/contraction.36ae8f65.mp4" alt="drawing" width="300" autoplay="" muted="" loop="" type="video/mp4"> </video></center>
+  </div>
+</div>
+<h2 id="survey" tabindex="-1"><a class="observablehq-header-anchor" href="#survey">Survey</a></h2>
+<p>The survey has two purposes:</p>
+<ol>
+<li>measure subjective experience of (muscle) fatigue</li>
+<li>gather information about other variables that could influence fatigue levels</li>
+</ol>
+<h3 id="assesssing-fatigue" tabindex="-1"><a class="observablehq-header-anchor" href="#assesssing-fatigue">Assesssing Fatigue</a></h3>
+<p>We are using an adapted version of the Checklist Individual Strength (CIS) for our questionnaire. This instrument was originally developed for measuring severity of fatigue in hospital studies of chronic fatigue symptom patients but has also been validated in the working population (see <a href="https://oem.bmj.com/content/oemed/57/5/353.full.pdf" target="_blank" rel="noopener noreferrer">Beurskens et al., 2000</a>). Many other fatigue measurement scales such as e.g. the Fatigue Severity Scale (FSS) (<a href="./10.1001/archneur.1989.00520460115022">Krupp et al., 1989</a>) or the Fatigue Impact Scale (FIS)(<a href="https://pubmed.ncbi.nlm.nih.gov/8148458/" target="_blank" rel="noopener noreferrer">Fisk et al 1994</a>) have either not been validated in healthy individuals or presume the ongoing presence of fatigue and are thus not applicable to our use case. Additionally, the CIS has been proven to have a good internal consistency and has been shown to be sensitive to change in fatigue levels over time (see <a href="https://www.sciencedirect.com/science/article/pii/S0022399903003714" target="_blank" rel="noopener noreferrer">Dittner et al. 2004</a>).</p>
+<p>However,  in its original form the CIS is intended to assess fatigue levels over  time periods of 2 weeks (<a href="https://oem.bmj.com/content/oemed/57/5/353.full.pdf" target="_blank" rel="noopener noreferrer">Beurskens et al., 2000</a>), we thus adapt the statements to be applicable to the past day as the questionnaire is inteded to be filled out at the end of each day.</p>
+<p>The survey has 20 items that are scored on a 7 level agreement scale ranging from 1="yes, thats true" to "7=no, thats not true"</p>
+<ul>
+<li>I felt tired</li>
+<li>I felt very active</li>
+<li>Thinking required effort</li>
+<li>Physically I felt exhausted</li>
+<li>I felt like doing all kinds of nice things</li>
+<li>I felt fit</li>
+<li>I did quite a lot today</li>
+<li>When I have been doing something, I was able to concentrate very well</li>
+<li>I felt weak</li>
+<li>I didn't do much during the day</li>
+<li>I could concentrate well</li>
+<li>I felt rested</li>
+<li>I had trouble concentrating</li>
+<li>Physically I felt I am in a bad condition</li>
+<li>I am full of plans</li>
+<li>I got tired very quickly</li>
+<li>I had a low output</li>
+<li>I felt no desire to do anything</li>
+<li>My thoughts easily wandered</li>
+<li>Physically I felt in a good shape</li>
+</ul>
+<h4 id="assessing-overall-wellbeing-and-muscle-soreness" tabindex="-1"><a class="observablehq-header-anchor" href="#assessing-overall-wellbeing-and-muscle-soreness">Assessing overall wellbeing and muscle soreness</a></h4>
+<p>Since our study specifically focuses on muscle fatigue, we incorporated additional items in the questionnaire to better represent this specific dimension as it is not explicitly covered in the CIS. For this we adapted the <a href="https://pubmed.ncbi.nlm.nih.gov/7898325/" target="_blank" rel="noopener noreferrer">Hooper Index</a> which is regularly used for the assessment of wellbeing in sports studies (e.g. <a href="https://www.sciencedirect.com/science/article/pii/S003193841631068X?via%253Dihub#bb0110" target="_blank" rel="noopener noreferrer">Clemente et al 2017</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6714361/#j_hukin-2019-0002_ref_011" target="_blank" rel="noopener noreferrer">Clemente et al 2019</a>, <a href="https://www.sciencedirect.com/science/article/pii/S0031938413002023" target="_blank" rel="noopener noreferrer">Haddad et al 2013</a>)
+Additional items to focus on muscles:</p>
+<ul>
+<li>Sleep Quality
+<ul>
+<li>very, very good</li>
+<li>very good</li>
+<li>good</li>
+<li>average</li>
+<li>bad</li>
+<li>very bad</li>
+<li>very, very bad</li>
+</ul>
+</li>
+<li>Stress Level
+<ul>
+<li>very, very good</li>
+<li>very good</li>
+<li>good</li>
+<li>average</li>
+<li>bad</li>
+<li>very bad</li>
+<li>very, very bad</li>
+</ul>
+</li>
+<li>Fatigue Level
+<ul>
+<li>very, very good</li>
+<li>very good</li>
+<li>good</li>
+<li>average</li>
+<li>bad</li>
+<li>very bad</li>
+<li>very, very bad</li>
+</ul>
+</li>
+<li>Muscle Soreness
+<ul>
+<li>very, very low</li>
+<li>very low</li>
+<li>low</li>
+<li>average</li>
+<li>high</li>
+<li>very high</li>
+<li>very, very high</li>
+</ul>
+</li>
+</ul>
+<h3 id="additional-questions" tabindex="-1"><a class="observablehq-header-anchor" href="#additional-questions">Additional Questions</a></h3>
+<p>To be able to account for potential confounders, taking into consideration other studies on wellbeing, we further record the following measures:
+Closed form:</p>
+<ul>
+<li>How many hours did you sleep last night? - Numeric</li>
+<li>How many coffees have you had today? - Numeric</li>
+<li>Day in menstruation cycle - Numeric</li>
+<li>Alcohol consumption
+<ul>
+<li>no alcohol</li>
+<li>one light alcoholic drink (e.g. beer, wine)</li>
+<li>two light alcoholic drinks or one strong alcoholic drink (e.g. cocktail, shot)</li>
+<li>more than three alcoholic drinks</li>
+</ul>
+</li>
+<li>What physical activities did you engage in today?
+<ul>
+<li>Walking for 30min or longer</li>
+<li>Yoga</li>
+<li>Weight Lifting</li>
+<li>High Intensive Interval Training</li>
+<li>Running</li>
+<li>Ball Sports</li>
+<li>Cycling for 30min or longer</li>
+<li>Swimming</li>
+<li>Other: please specify</li>
+</ul>
+</li>
+<li>Pedometer - Numeric
+Free text:</li>
+<li>Did you feel ill? If so, describe the severity and symptoms.</li>
+<li>Have you experienced any significant changes in your mental wellbeing/stress today? Can you describe the situation(s).</li>
+<li>Short, keyword description of what you did today</li>
+<li>Any comments regarding the measurement session today (e.g. bloopers with electrodes etc.)</li>
+<li>Was there anything else that might be relevant?</li>
+</ul>
+<h3 id="topics-not-included-in-the-questionnaire" tabindex="-1"><a class="observablehq-header-anchor" href="#topics-not-included-in-the-questionnaire">Topics not included in the questionnaire</a></h3>
+<h4 id="nutrition" tabindex="-1"><a class="observablehq-header-anchor" href="#nutrition">Nutrition</a></h4>
+<p>While muscle fatigue is a complex phenomenon, most current evidence indicates that muscle fatigue in the context of chronic fatigue or illnesses, is mainly caused by the failures in the central nervous system (CNS) (<a href="https://journals.lww.com/acsm-msse/fulltext/1997/01000/possible_mechanisms_of_central_nervous_system.8.aspx" target="_blank" rel="noopener noreferrer">Davis &amp; Bailey 1997</a>). The mechanisms that cause CNS fatigue are not well understood, a possible epxlanation are exercise induced alteration in neurotransmitters (<a href="http://www.bentrem.sycks.net/NutritionInSport-Ronald-J-Maughan.pdf#page=189" target="_blank" rel="noopener noreferrer">Davis, 1999</a>).</p>
+<p>While these neurotransmitters are affected by nutritional intake, the relationship is still unclear and is further dependent on other environmental and metabolic factors. Considering this as well as the substantial additional time requirement for recording food intake, we have decided not to include this dimension in our questionnaire.
+Also, <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jhn.12435" target="_blank" rel="noopener noreferrer">Campagnolo et al, 2017</a> conducted a review of dietary and nutrition interventions for the treatment of chronic fatigue syndrome and 'identified insufficient evidence for the use of nutrtional supplements and elimination or modified diets to relive symptoms'.</p>
+<h4 id="environmental-factors" tabindex="-1"><a class="observablehq-header-anchor" href="#environmental-factors">Environmental Factors</a></h4>
+<p>We do not include any questions regarding exposure to pollution, outdoor time or weather. We are considering adding those measurement via the integration of a smartwatch in the future. However, manual reporting of these measures is currently out of scope.</p>
+<!--
+#### Questions from first trial
+- How fatigued were your muscles today? 1 (no fatigue at all) to 7 (extremely fatigued)
+   - Level 1: No Fatigue at All: Muscles feel completely fresh, as if you haven't exercised or engaged in any physical activity.
+      - No soreness or stiffness.
+      - Full range of motion without discomfort.
+      - Able to walk and climb stairs with ease and no perceived effort.
+      - Able to perfrom all kiinds of common tasks without hinderance.
+   - Level 2: Very Mild Fatigue: Muscles are slightly tired, but it’s barely noticeable.
+      - Slight sense of tiredness.
+      - No pain or soreness.
+      - Full range of motion with minimal perceived effort.
+   - Level 3: Mild Fatigue: Muscles are tired but still function normally without any significant discomfort.
+      - Noticeable but mild tiredness.
+      - Minor stiffness or tightness.
+      - Able to perform most physical tasks, though with slightly increased effort.
+   - Level 4: Moderate Fatigue: Muscles feel tired, and there is a noticeable decrease in performance.
+      - Tiredness and some soreness.
+      - Reduced strength and endurance.
+      - Slight discomfort during movement, but tasks are still manageable.
+   - Level 5: Significant Fatigue: Muscles are quite tired, and performing physical tasks is more challenging.
+      - Moderate soreness and stiffness.
+      - Noticeable drop in strength and endurance.
+      - Movement involves a fair amount of effort, and some tasks might be difficult.
+   - Level 6: Severe Fatigue: Muscles are very tired, with significant discomfort and reduced ability to perform tasks.
+   - Severe soreness and stiffness.
+   - Major decrease in strength and endurance.
+   - Performing physical tasks is very challenging and uncomfortable.
+   - Level 7: Extremely Fatigued: Muscles are exhausted to the point where performing any physical activity is almost impossible.
+   - Intense soreness and stiffness.
+   - Extremely low strength and endurance.
+   - Any movement causes significant discomfort, and even simple tasks are barely achievable.
+
+
+
+- Symptoms experienced today 
+   - Muscle weakness
+   - Trouble climbing stairs
+   - Trouble standing from a seated position
+   - Active Rash
+   - Brain Fog
+   - Extreme Fatigue
+- How difficult was it to dress and shower today? 1 (no difficulty) to 5 (unable to do).
+- How difficult was it to climb stairs today? 1 (no difficulty) to 5 (unable to do).
+- <span style="color:red">How difficult was it to complete common daily activities?  1 (no difficulty) to 5 (unable to do). [Kick Out - high correlation with pain] </span>
+- How much pain were you in today? 1 (pain at all) to 5 (worst pain experienced).
+- Do you have an active and visible rash? 1 (no rash at all) to 5 (very visible rash in DM areas)
+- Overall how did you feel today? As an overall "wellness" 1 (horrible, hard to function) to 5 (very well).[Kick Out - high correlation with pain]
+- How do you think you will feel tomorrow? As an overall "wellness" 1 (horrible, hard to function) to 5 (very well).
+
+
+### References
+-->
+<!---
+- Beurskens AJHM, Bültmann U, Kant I, et alFatigue among working people: validity of a questionnaire measureOccupational and Environmental Medicine 2000;57:353-357.
+[https://oem.bmj.com/content/oemed/57/5/353.full.pdf](https://oem.bmj.com/content/oemed/57/5/353.full.pdf)
+- A.J Dittner, S.C Wessely, R.G Brown, The assessment of fatigue: A practical guide for clinicians and researchers Journal of Psychosomatic Research, Volume 56, Issue 2, 2004, Pages 157-170, ISSN 0022-3999, [https://doi.org/10.1016/S0022-3999(03)00371-4.](https://www.sciencedirect.com/science/article/pii/S0022399903003714)
+- Fisk JD, Ritvo PG, Ross L, Haase DA, Marrie TJ, Schlech WF.
+Measuring the functional impact of fatigue: initial validation of
+the fatigue impact scale. Clin Infect Dis 1994;18(Suppl 1):
+S79 – 83. (https://pubmed.ncbi.nlm.nih.gov/8148458/)[https://pubmed.ncbi.nlm.nih.gov/8148458/]
+- Hendrix C. Russell , Housh Terry J. , Johnson Glen O. ,  Mielke Michelle, Camic Clayton L. , Zuniga Jorge M. , Schmidt  Richard J., A new EMG frequency-based fatigue threshold test, Journal of Neuroscience Methods, Volume 181, Issue 1, 2009, Pages 45-51, ISSN 0165-0270, [https://doi.org/10.1016/j.jneumeth.2009.04.011.](https://www.sciencedirect.com/science/article/pii/S0165027009002015)
+- Gawda P, Ginszt M, Ginszt A, Pawlak H, Majcher P. Differences in myoelectric manifestations of fatigue during isometric muscle actions. Ann Agric Environ Med. 2018 Jun 20;25(2):296-299. doi: [10.26444/aaem/81716.](10.26444/aaem/81716) Epub 2018 Feb 21. PMID: 29936808.
+- Hooper SL, Mackinnon LT, Howard A, Gordon RD, Bachmann AW. Markers for monitoring overtraining and recovery. Med Sci Sports Exerc. 1995 Jan;27(1):106-12. PMID: 7898325. [https://pubmed.ncbi.nlm.nih.gov/7898325/](https://pubmed.ncbi.nlm.nih.gov/7898325/)
+-  Krupp LB, LaRocca NG, Muir-Nash J, Steinberg AD. The
+Fatigue Severity Scale. Application to patients with multiple
+sclerosis and systemic lupus erythematosus. Arch Neurol 1989;
+46:1121 – 3. doi: [10.1001/archneur.1989.00520460115022.](10.1001/archneur.1989.00520460115022.)
+
+- Na Li, Rui Zhou, Bharath Krishna, Ashirbad Pradhan, Hyowon Lee, Jiayuan He, and Ning Jiang. 2024. Non-invasive Techniques for Muscle Fatigue Monitoring: A Comprehensive Survey. ACM Comput. Surv. 56, 9, Article 221 (September 2024), 40 pages. [https://doi.org/10.1145/3648679](https://doi.org/10.1145/3648679)
+
+- Smith, C.M., Housh, T.J., Hill, E.C., Johnson, G.O. and Schmidt, R.J. (2017), Changes in electromechanical delay during fatiguing dynamic muscle actions. Muscle Nerve, 56: 315-320. [https://doi.org/10.1002/mus.25502](https://doi.org/10.1002/mus.25502)
+
+
+
+- Miura N, Watanabe T. Potential of M-Wave Elicited by Double Pulse for Muscle Fatigue Evaluation in Intermittent Muscle Activation by Functional Electrical Stimulation for Motor Rehabilitation. J Med Eng. 2016;2016:6957287. doi: 10.1155/2016/6957287. Epub 2016 Mar 27. PMID: 27110556; PMCID: PMC4826699.
+- Sengchuai K, Kanjanaroat C, Jaruenpunyasak J, Limsakul C, Tayati W, Booranawong A, Jindapetch N. Development of a Real-Time Knee Extension Monitoring and Rehabilitation System: Range of Motion and Surface EMG Measurement and Evaluation. Healthcare (Basel). 2022 Dec 15;10(12):2544. doi: [10.3390/healthcare10122544](10.3390/healthcare10122544). PMID: 36554067; PMCID: PMC9778223.
+
+- Hodges PW, van den Hoorn W, Wrigley TV, Hinman RS, Bowles KA, Cicuttini F, Wang Y, Bennell K. Increased duration of co-contraction of medial knee muscles is associated with greater progression of knee osteoarthritis. Man Ther. 2016 Feb;21:151-8. doi: [10.1016/j.math.2015.07.004.](10.1016/j.math.2015.07.004.) Epub 2015 Jul 17. PMID: 26254263.--->
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-06-19T22:11:46">Jun 19, 2024</a>.</div>
+</footer>
+</div>

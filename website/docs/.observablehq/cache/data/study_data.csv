@@ -1,0 +1,148 @@
+id,date,steps,tomorrow,pred_yesterday,symptoms,name,value
+2,11/06/2023,11900,2,NA,Muscle weakness ;Active Rash;,fatigue,2
+2,11/06/2023,11900,2,NA,Muscle weakness ;Active Rash;,dress_shower,1
+2,11/06/2023,11900,2,NA,Muscle weakness ;Active Rash;,stairs,3
+2,11/06/2023,11900,2,NA,Muscle weakness ;Active Rash;,common,3
+2,11/06/2023,11900,2,NA,Muscle weakness ;Active Rash;,pain,2
+2,11/06/2023,11900,2,NA,Muscle weakness ;Active Rash;,rash,3
+2,11/06/2023,11900,2,NA,Muscle weakness ;Active Rash;,wellness,3
+1,11/07/2023,10865,2,2,Muscle weakness ;Trouble climbing stairs ;Trouble standing from a seated position ;Active Rash;,fatigue,2
+1,11/07/2023,10865,2,2,Muscle weakness ;Trouble climbing stairs ;Trouble standing from a seated position ;Active Rash;,dress_shower,2
+1,11/07/2023,10865,2,2,Muscle weakness ;Trouble climbing stairs ;Trouble standing from a seated position ;Active Rash;,stairs,3
+1,11/07/2023,10865,2,2,Muscle weakness ;Trouble climbing stairs ;Trouble standing from a seated position ;Active Rash;,common,4
+1,11/07/2023,10865,2,2,Muscle weakness ;Trouble climbing stairs ;Trouble standing from a seated position ;Active Rash;,pain,4
+1,11/07/2023,10865,2,2,Muscle weakness ;Trouble climbing stairs ;Trouble standing from a seated position ;Active Rash;,rash,4
+1,11/07/2023,10865,2,2,Muscle weakness ;Trouble climbing stairs ;Trouble standing from a seated position ;Active Rash;,wellness,2
+3,11/08/2023,9740,5,2,Active Rash;,fatigue,1
+3,11/08/2023,9740,5,2,Active Rash;,dress_shower,1
+3,11/08/2023,9740,5,2,Active Rash;,stairs,1
+3,11/08/2023,9740,5,2,Active Rash;,common,1
+3,11/08/2023,9740,5,2,Active Rash;,pain,1
+3,11/08/2023,9740,5,2,Active Rash;,rash,3
+3,11/08/2023,9740,5,2,Active Rash;,wellness,4
+4,11/10/2023,9500,5,5,Active Rash;,fatigue,1
+4,11/10/2023,9500,5,5,Active Rash;,dress_shower,1
+4,11/10/2023,9500,5,5,Active Rash;,stairs,2
+4,11/10/2023,9500,5,5,Active Rash;,common,1
+4,11/10/2023,9500,5,5,Active Rash;,pain,1
+4,11/10/2023,9500,5,5,Active Rash;,rash,2
+4,11/10/2023,9500,5,5,Active Rash;,wellness,4
+5,11/11/2023,6785,2,5,Muscle weakness ;Active Rash;Brain Fog;,fatigue,3
+5,11/11/2023,6785,2,5,Muscle weakness ;Active Rash;Brain Fog;,dress_shower,2
+5,11/11/2023,6785,2,5,Muscle weakness ;Active Rash;Brain Fog;,stairs,2
+5,11/11/2023,6785,2,5,Muscle weakness ;Active Rash;Brain Fog;,common,2
+5,11/11/2023,6785,2,5,Muscle weakness ;Active Rash;Brain Fog;,pain,2
+5,11/11/2023,6785,2,5,Muscle weakness ;Active Rash;Brain Fog;,rash,3
+5,11/11/2023,6785,2,5,Muscle weakness ;Active Rash;Brain Fog;,wellness,3
+6,11/12/2023,12754,4,2,Muscle weakness ;Active Rash;,fatigue,2
+6,11/12/2023,12754,4,2,Muscle weakness ;Active Rash;,dress_shower,1
+6,11/12/2023,12754,4,2,Muscle weakness ;Active Rash;,stairs,2
+6,11/12/2023,12754,4,2,Muscle weakness ;Active Rash;,common,1
+6,11/12/2023,12754,4,2,Muscle weakness ;Active Rash;,pain,1
+6,11/12/2023,12754,4,2,Muscle weakness ;Active Rash;,rash,2
+6,11/12/2023,12754,4,2,Muscle weakness ;Active Rash;,wellness,4
+7,11/13/2023,5768,5,4,Active Rash;Brain Fog;,fatigue,2
+7,11/13/2023,5768,5,4,Active Rash;Brain Fog;,dress_shower,1
+7,11/13/2023,5768,5,4,Active Rash;Brain Fog;,stairs,1
+7,11/13/2023,5768,5,4,Active Rash;Brain Fog;,common,2
+7,11/13/2023,5768,5,4,Active Rash;Brain Fog;,pain,1
+7,11/13/2023,5768,5,4,Active Rash;Brain Fog;,rash,2
+7,11/13/2023,5768,5,4,Active Rash;Brain Fog;,wellness,4
+8,11/14/2023,7783,5,5,Active Rash;,fatigue,1
+8,11/14/2023,7783,5,5,Active Rash;,dress_shower,1
+8,11/14/2023,7783,5,5,Active Rash;,stairs,2
+8,11/14/2023,7783,5,5,Active Rash;,common,2
+8,11/14/2023,7783,5,5,Active Rash;,pain,1
+8,11/14/2023,7783,5,5,Active Rash;,rash,3
+8,11/14/2023,7783,5,5,Active Rash;,wellness,5
+9,11/15/2023,10985,2,5,Active Rash;Muscle weakness ;,fatigue,3
+9,11/15/2023,10985,2,5,Active Rash;Muscle weakness ;,dress_shower,4
+9,11/15/2023,10985,2,5,Active Rash;Muscle weakness ;,stairs,3
+9,11/15/2023,10985,2,5,Active Rash;Muscle weakness ;,common,2
+9,11/15/2023,10985,2,5,Active Rash;Muscle weakness ;,pain,2
+9,11/15/2023,10985,2,5,Active Rash;Muscle weakness ;,rash,5
+9,11/15/2023,10985,2,5,Active Rash;Muscle weakness ;,wellness,3
+10,11/16/2023,8778,4,2,Brain Fog;Active Rash;,fatigue,4
+10,11/16/2023,8778,4,2,Brain Fog;Active Rash;,dress_shower,2
+10,11/16/2023,8778,4,2,Brain Fog;Active Rash;,stairs,2
+10,11/16/2023,8778,4,2,Brain Fog;Active Rash;,common,2
+10,11/16/2023,8778,4,2,Brain Fog;Active Rash;,pain,2
+10,11/16/2023,8778,4,2,Brain Fog;Active Rash;,rash,3
+10,11/16/2023,8778,4,2,Brain Fog;Active Rash;,wellness,3
+11,11/17/2023,11206,3,4,Active Rash;,fatigue,4
+11,11/17/2023,11206,3,4,Active Rash;,dress_shower,1
+11,11/17/2023,11206,3,4,Active Rash;,stairs,1
+11,11/17/2023,11206,3,4,Active Rash;,common,1
+11,11/17/2023,11206,3,4,Active Rash;,pain,1
+11,11/17/2023,11206,3,4,Active Rash;,rash,3
+11,11/17/2023,11206,3,4,Active Rash;,wellness,4
+12,11/18/2023,12894,2,3,Active Rash;,fatigue,1
+12,11/18/2023,12894,2,3,Active Rash;,dress_shower,1
+12,11/18/2023,12894,2,3,Active Rash;,stairs,2
+12,11/18/2023,12894,2,3,Active Rash;,common,1
+12,11/18/2023,12894,2,3,Active Rash;,pain,1
+12,11/18/2023,12894,2,3,Active Rash;,rash,2
+12,11/18/2023,12894,2,3,Active Rash;,wellness,5
+13,11/19/2023,4475,3,2,Muscle weakness ;Active Rash;Brain Fog;,fatigue,1
+13,11/19/2023,4475,3,2,Muscle weakness ;Active Rash;Brain Fog;,dress_shower,1
+13,11/19/2023,4475,3,2,Muscle weakness ;Active Rash;Brain Fog;,stairs,1
+13,11/19/2023,4475,3,2,Muscle weakness ;Active Rash;Brain Fog;,common,1
+13,11/19/2023,4475,3,2,Muscle weakness ;Active Rash;Brain Fog;,pain,1
+13,11/19/2023,4475,3,2,Muscle weakness ;Active Rash;Brain Fog;,rash,3
+13,11/19/2023,4475,3,2,Muscle weakness ;Active Rash;Brain Fog;,wellness,3
+14,11/23/2023,6757,3,3, Extreme fatigue ;Active Rash;Brain Fog;,fatigue,5
+14,11/23/2023,6757,3,3, Extreme fatigue ;Active Rash;Brain Fog;,dress_shower,2
+14,11/23/2023,6757,3,3, Extreme fatigue ;Active Rash;Brain Fog;,stairs,3
+14,11/23/2023,6757,3,3, Extreme fatigue ;Active Rash;Brain Fog;,common,3
+14,11/23/2023,6757,3,3, Extreme fatigue ;Active Rash;Brain Fog;,pain,2
+14,11/23/2023,6757,3,3, Extreme fatigue ;Active Rash;Brain Fog;,rash,5
+14,11/23/2023,6757,3,3, Extreme fatigue ;Active Rash;Brain Fog;,wellness,2
+17,11/25/2023,11980,3,3,Brain Fog;Active Rash; Extreme fatigue ;,fatigue,5
+17,11/25/2023,11980,3,3,Brain Fog;Active Rash; Extreme fatigue ;,dress_shower,3
+17,11/25/2023,11980,3,3,Brain Fog;Active Rash; Extreme fatigue ;,stairs,2
+17,11/25/2023,11980,3,3,Brain Fog;Active Rash; Extreme fatigue ;,common,4
+17,11/25/2023,11980,3,3,Brain Fog;Active Rash; Extreme fatigue ;,pain,2
+17,11/25/2023,11980,3,3,Brain Fog;Active Rash; Extreme fatigue ;,rash,4
+17,11/25/2023,11980,3,3,Brain Fog;Active Rash; Extreme fatigue ;,wellness,2
+16,11/26/2023,5675,3,3,Active Rash; Extreme fatigue ;,fatigue,3
+16,11/26/2023,5675,3,3,Active Rash; Extreme fatigue ;,dress_shower,3
+16,11/26/2023,5675,3,3,Active Rash; Extreme fatigue ;,stairs,3
+16,11/26/2023,5675,3,3,Active Rash; Extreme fatigue ;,common,3
+16,11/26/2023,5675,3,3,Active Rash; Extreme fatigue ;,pain,3
+16,11/26/2023,5675,3,3,Active Rash; Extreme fatigue ;,rash,4
+16,11/26/2023,5675,3,3,Active Rash; Extreme fatigue ;,wellness,2
+15,11/27/2023,8495,3,3,Active Rash;Brain Fog;,fatigue,2
+15,11/27/2023,8495,3,3,Active Rash;Brain Fog;,dress_shower,1
+15,11/27/2023,8495,3,3,Active Rash;Brain Fog;,stairs,1
+15,11/27/2023,8495,3,3,Active Rash;Brain Fog;,common,1
+15,11/27/2023,8495,3,3,Active Rash;Brain Fog;,pain,1
+15,11/27/2023,8495,3,3,Active Rash;Brain Fog;,rash,2
+15,11/27/2023,8495,3,3,Active Rash;Brain Fog;,wellness,4
+18,11/29/2023,11907,4,3, Extreme fatigue ;,fatigue,2
+18,11/29/2023,11907,4,3, Extreme fatigue ;,dress_shower,1
+18,11/29/2023,11907,4,3, Extreme fatigue ;,stairs,3
+18,11/29/2023,11907,4,3, Extreme fatigue ;,common,3
+18,11/29/2023,11907,4,3, Extreme fatigue ;,pain,2
+18,11/29/2023,11907,4,3, Extreme fatigue ;,rash,2
+18,11/29/2023,11907,4,3, Extreme fatigue ;,wellness,3
+19,11/30/2023,5073,4,4,Active Rash;,fatigue,4
+19,11/30/2023,5073,4,4,Active Rash;,dress_shower,2
+19,11/30/2023,5073,4,4,Active Rash;,stairs,3
+19,11/30/2023,5073,4,4,Active Rash;,common,3
+19,11/30/2023,5073,4,4,Active Rash;,pain,2
+19,11/30/2023,5073,4,4,Active Rash;,rash,3
+19,11/30/2023,5073,4,4,Active Rash;,wellness,3
+20,12/01/2023,4599,2,4,Muscle weakness ;Trouble climbing stairs ;Active Rash;Brain Fog; Extreme fatigue ;,fatigue,5
+20,12/01/2023,4599,2,4,Muscle weakness ;Trouble climbing stairs ;Active Rash;Brain Fog; Extreme fatigue ;,dress_shower,3
+20,12/01/2023,4599,2,4,Muscle weakness ;Trouble climbing stairs ;Active Rash;Brain Fog; Extreme fatigue ;,stairs,4
+20,12/01/2023,4599,2,4,Muscle weakness ;Trouble climbing stairs ;Active Rash;Brain Fog; Extreme fatigue ;,common,4
+20,12/01/2023,4599,2,4,Muscle weakness ;Trouble climbing stairs ;Active Rash;Brain Fog; Extreme fatigue ;,pain,4
+20,12/01/2023,4599,2,4,Muscle weakness ;Trouble climbing stairs ;Active Rash;Brain Fog; Extreme fatigue ;,rash,4
+20,12/01/2023,4599,2,4,Muscle weakness ;Trouble climbing stairs ;Active Rash;Brain Fog; Extreme fatigue ;,wellness,1
+NA,,NA,NA,2,,fatigue,NA
+NA,,NA,NA,2,,dress_shower,NA
+NA,,NA,NA,2,,stairs,NA
+NA,,NA,NA,2,,common,NA
+NA,,NA,NA,2,,pain,NA
+NA,,NA,NA,2,,rash,NA
+NA,,NA,NA,2,,wellness,NA

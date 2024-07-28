@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Literature Review | Do Algorithms Care?</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_import/styles.7c3ba4e1.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_import/styles.7c3ba4e1.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<script type="module">
+
+import "./_observablehq/client.js";
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Do Algorithms Care?</a></li>
+  </ol>
+  <section class="observablehq-section-active">
+    <summary></summary>
+    <ol>
+    <li class="observablehq-link"><a href="./protocol">Protocol</a></li>
+    <li class="observablehq-link"><a href="./sensor-kit">Apricot Sensor-Kit N2</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./research">Research</a></li>
+    <li class="observablehq-link"><a href="./code">Code</a></li>
+    <li class="observablehq-link"><a href="./about">About</a></li>
+    <li class="observablehq-link"><a href="./emg_data">EMG Data</a></li>
+    <li class="observablehq-link"><a href="./example-dashboard">Survey Data Visualisation</a></li>
+    </ol>
+  </section>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#studies-trying-to-predict-fatigue-based-on-emg-data">Studies trying to predict fatigue based on EMG data</a></li>
+<li class="observablehq-secondary-link"><a href="#yousif%2C-2019">Yousif, 2019</a></li>
+<li class="observablehq-secondary-link"><a href="#papakostas%2C-2019">Papakostas, 2019</a></li>
+<li class="observablehq-secondary-link"><a href="#kefalas%2C-2023">Kefalas, 2023</a></li>
+<li class="observablehq-secondary-link"><a href="#jaiswal%2C-2022">Jaiswal, 2022</a></li>
+<li class="observablehq-secondary-link"><a href="#yaman%2C-2019">Yaman, 2019</a></li>
+</ol>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="characterization-of-muscle-fatigue" tabindex="-1"><a class="observablehq-header-anchor" href="#characterization-of-muscle-fatigue">Characterization of Muscle Fatigue</a></h1>
+<h2 id="" tabindex="-1"><a class="observablehq-header-anchor" href="#"></a></h2>
+<p>"The problem is complex because fatigue can be caused by peripheral muscle weakness
+(peripheral fatigue) or by a failure to initiate or sustain voluntary drive to the muscle by the central nervous system (CNS fatigue)."</p>
+<p>"CNS fatigue is also thought to be the most likely explanation of fatigue that accompanies viral or bacterial infections, recovery from injury or surgery, chronic fatigue syndrome, depression, ‘jet lag’ and meal-induced sleepiness and fatigue (Davis &amp; Bailey 1997). However, a full understanding of the causes of fatigue in these situations will await future studies designed to provide plausible neurobiological mechanisms to explain the fatigue."</p>
+<h1 id="studies-trying-to-predict-fatigue-based-on-emg-data" tabindex="-1"><a class="observablehq-header-anchor" href="#studies-trying-to-predict-fatigue-based-on-emg-data">Studies trying to predict fatigue based on EMG data</a></h1>
+<h2 id="li%2C-2024" tabindex="-1"><a class="observablehq-header-anchor" href="#li%2C-2024"><a href="https://dl.acm.org/doi/pdf/10.1145/3648679" target="_blank" rel="noopener noreferrer">Li, 2024</a></a></h2>
+<blockquote>
+<p>Na Li, Rui Zhou, Bharath Krishna, Ashirbad Pradhan, Hyowon Lee, Jiayuan He, and Ning Jiang. 2024. Non-invasive Techniques for Muscle Fatigue Monitoring: A Comprehensive Survey. ACM Comput. Surv. 56, 9, Article 221 (September 2024), 40 pages. <a href="https://doi.org/10.1145/3648679" target="_blank" rel="noopener noreferrer">https://doi.org/10.1145/3648679</a>&lt;</p>
+</blockquote>
+<h3 id="fatigue-measurement" tabindex="-1"><a class="observablehq-header-anchor" href="#fatigue-measurement">Fatigue Measurement</a></h3>
+<ul>
+<li>Wet biomarkers are "biological substances measured in body fluids such as blood,saliva, or urine" -&gt; but are usually dependent on invasive technologies &amp;</li>
+<li>Dry biomarkers are usually easy to acquire
+<ul>
+<li>subjective measures</li>
+<li>performance-related methods</li>
+<li>physiological signal-based methods: detect the onset of fatigue based on changes in subjects’ physiological responses
+<ul>
+<li>near-infrared spectroscopy (NIRS) detects fatigue by measuring the amount of oxygen in the muscle</li>
+<li>mechanomyogram (MMG) can record the vibration of muscle during muscle fiber movement and then observe the mechanical signals on the surface of the contracted muscle</li>
+<li>Ultrasound (US) describes the structural and morphological changes of skeletal muscle</li>
+<li>EMG measures activation state of muscles</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pre-processing" tabindex="-1"><a class="observablehq-header-anchor" href="#pre-processing">Pre Processing</a></h3>
+<p>EMG Pre Processing</p>
+<ul>
+<li>digital filtering, segmentation, rectification (e.g.,
+full-wave rectification and half-wave rectification)
+<ul>
+<li>most commonly used EMG signal filter is essentially a finite impulse response bandpass filter with a cutoff point of 20 Hz and 500 Hz</li>
+</ul>
+</li>
+<li>temporal windowing
+<ul>
+<li>slice” continuoussEMG data into shortsegmentsforsubsequent analyses - analysis window length should not exceed 200 ms (Huang et al.)</li>
+<li>150–250 ms as the optimal tradeoff between the classification accuracy and the delay</li>
+<li>200–300 ms for the disjoint (Smith et al.)
+and 225–300 ms for the overlap windowing technique, respectively (Ashraf et al.)</li>
+</ul>
+</li>
+<li>smoothing (e.g., Average Rectified Value
+(ARV) and Root Mean Square (RMS))</li>
+<li>amplitude normalization [55]</li>
+</ul>
+<h3 id="features" tabindex="-1"><a class="observablehq-header-anchor" href="#features">Features</a></h3>
+<h4 id="emg" tabindex="-1"><a class="observablehq-header-anchor" href="#emg">EMG</a></h4>
+<p>Time domain features:</p>
+<ul>
+<li>RMS of EMG envelope: RMS value of the windowed sEMG</li>
+<li>integrated EMG (IEMG): area under the curve of the rectified raw sEMG signals, i.e., the mathematical integral of the absolute value of the raw sEMG signals</li>
+</ul>
+<p>Frequency domain features:</p>
+<ul>
+<li>Fast Fourier Transform (FFT) and then extract power spectrum characteristics</li>
+<li>Mean Power Frequency (MPF): average frequency at which the sum of the product of the EMG power spectrum and frequency is divided by the total</li>
+<li>Median Frequency (MDF)</li>
+</ul>
+<p>Other methods:</p>
+<ul>
+<li>Short-time Fourier Transform (STFT): time-localized frequency information for situations in which frequency components of a signal vary over time</li>
+<li>Continuous Wavelet Transform (CWT)</li>
+<li>extracting entropy from sEMG is an effective method for analyzing muscle fatigue</li>
+</ul>
+<h4 id="mmg" tabindex="-1"><a class="observablehq-header-anchor" href="#mmg">MMG</a></h4>
+<ul>
+<li>RMS -the greater the muscle activation, the higher the MMG amplitude</li>
+<li>MPF</li>
+<li>MDF</li>
+<li>frequency radio change (FRC)</li>
+</ul>
+<h3 id="results" tabindex="-1"><a class="observablehq-header-anchor" href="#results">Results</a></h3>
+<h4 id="emg-1" tabindex="-1"><a class="observablehq-header-anchor" href="#emg-1">EMG</a></h4>
+<ul>
+<li>Wellems et al. [93] found that during the 20% MVC isometric contraction of the quadriceps femoris to failure, the MDF and MPF first increased, then decreased, and finally fell below the initial state</li>
+<li>Mehra et al. [94] found that the shape of the EMG spectral distribution of deltoid muscle did not change when performing isometric lateral raise at 60% MVC till the endurance limit but shifted towards lower frequency with an increase of magnitude at characteristic mode frequency</li>
+</ul>
+<h3 id="protocols" tabindex="-1"><a class="observablehq-header-anchor" href="#protocols">Protocols</a></h3>
+<blockquote>
+<p>In most experimental designs on fatigue, subjects were required to perform subject-specific maximum voluntary contraction (MVC).&lt;</p>
+</blockquote>
+<p>most research based on isometric contractions potentially (contractions in which there is no change in the length of the muscle. No joint or limb motion occurs) since EMG signals during isometric contraction can be assumed to be stationary between short-time intervals of 0.5 s–2 s</p>
+<h2 id="yousif%2C-2019" tabindex="-1"><a class="observablehq-header-anchor" href="#yousif%2C-2019"><a href="https://iopscience.iop.org/article/10.1088/1757-899X/705/1/012010" target="_blank" rel="noopener noreferrer">Yousif, 2019</a></a></h2>
+<p><em>Yousif, Hayder &amp; Zakaria, Ammar &amp; Abdul Rahim, Norasmadi &amp; Salleh, Ahmad &amp; Sabry, Mustafa &amp; Alfarhan, Khudhur &amp; Kamarudin, Latifah &amp; Syed Zakaria, Syed Muhammad Mamduh &amp; Hasan, Ali &amp; K Hussain, Moaid. (2019). Assessment of Muscles Fatigue Based on Surface EMG Signals Using Machine Learning and Statistical Approaches: A Review. IOP Conference Series Materials Science and Engineering. 705. 012010. 10.1088/1757-899X/705/1/012010.</em></p>
+<h3 id="task" tabindex="-1"><a class="observablehq-header-anchor" href="#task">Task</a></h3>
+<p>Review existing studies of studies on the assessment of muscles fatigue based on surface EMG signals using machine learning and statistical approaches</p>
+<h3 id="protocols-1" tabindex="-1"><a class="observablehq-header-anchor" href="#protocols-1">Protocols</a></h3>
+<p>Existing studies use very different protocols:
+<img src="./_file/images/image-3.aa9149e0.png" alt="drawing" width="400"></p>
+<h3 id="fatigue-measurement-1" tabindex="-1"><a class="observablehq-header-anchor" href="#fatigue-measurement-1">Fatigue Measurement</a></h3>
+<blockquote>
+<p>The single most relevant determination of fatigue is done through the measurement of force or power measurement, which is produced during the course of a voluntary effort of maximum intensity, maximal voluntary contractions (MVCs) test. In general, when the subject performs the task of interest or the fatigue task continuously, at the pre-, post- and/or the interim time point, brief MVC tests will be conducted to register the drop of maximal force output from particular muscle. (...) The force output decline rate measured in these MVCs tests will indicate the muscle fatigue pattern.&lt;&gt;</p>
+</blockquote>
+<h3 id="pre-processing-1" tabindex="-1"><a class="observablehq-header-anchor" href="#pre-processing-1">Pre-Processing</a></h3>
+<blockquote>
+<p>The EMG transmission needs to remove the high frequencies and low frequencies, while a specific band of frequencies must be transmitted forward, this is done by using a specific filter called a bandpass filter&gt;</p>
+</blockquote>
+<p>Filtration -&gt; Rectification -&gt; Smoothing</p>
+<h3 id="features-1" tabindex="-1"><a class="observablehq-header-anchor" href="#features-1">Features</a></h3>
+<h4 id="time-domain-features" tabindex="-1"><a class="observablehq-header-anchor" href="#time-domain-features">Time Domain Features</a></h4>
+<blockquote>
+<p>The fatigue is related to the increment of the EMG amplitude &lt;</p>
+</blockquote>
+<ul>
+<li>root mean square (RMS)</li>
+<li>mean absolute value (MAV)</li>
+<li>use multiple time windows (MTW) -&gt; combine signal processing with feature extraction (e.g. Multiple hamming windows (MHW), multiple Slepian windows (MSW) and Multiple trapezoidal windows (MTRW))</li>
+</ul>
+<h4 id="frequency-domain-features" tabindex="-1"><a class="observablehq-header-anchor" href="#frequency-domain-features">Frequency Domain Features</a></h4>
+<ul>
+<li>shift towards lower frequencies of the EMG frequency spectrum calculated by fast Fourier transform (FFT) method</li>
+<li>relative changes in the mean (MNF)  to inital value or non-fatigue state</li>
+<li>relative changes in the median power frequencies (MDF) to inital value or non-fatigue state</li>
+<li>mean power frequency (MPF)</li>
+</ul>
+<h4 id="time-frequency-domain-features" tabindex="-1"><a class="observablehq-header-anchor" href="#time-frequency-domain-features">Time Frequency Domain Features</a></h4>
+<blockquote>
+<p>first when both amplitude and spectrum increases that’s mean force increase, second when both amplitude and spectrum decreases that’s mean force decrease, third when amplitude increase and spectrum decrease that’s mean fatigue, fourth when amplitude decrease and spectrum increased that’s mean recovery&lt;</p>
+</blockquote>
+<ul>
+<li>Short-Time Fourier Spectrum (STFT) -&gt; spectrum compression indicates fatigue</li>
+<li>continuous wavelet transforms (CWT)</li>
+<li>discrete wavelet transform (DWT)</li>
+<li>zero-crossing rate (ZCR)</li>
+<li>averaged instantaneous frequency</li>
+<li>wavelet analysis</li>
+<li>fractal analysis</li>
+<li>instantaneous mean frequency (IMNG)</li>
+<li>instantaneous median frequency (IMDF)</li>
+<li>Wigner distribution (WD)</li>
+<li>Choi-Williams distribution (CWD)</li>
+<li>time-varying autoregressive approach (TVAR)</li>
+</ul>
+<h2 id="papakostas%2C-2019" tabindex="-1"><a class="observablehq-header-anchor" href="#papakostas%2C-2019"><a href="https://doi.org/10.1145/3316782.3322772" target="_blank" rel="noopener noreferrer">Papakostas, 2019</a></a></h2>
+<p><em>Michalis Papakostas, Varun Kanal, Maher Abujelala, Konstantinos Tsiakas, and Fillia Makedon. 2019. Physical fatigue detection through EMG wearables and subjective user reports: a machine learning approach towards adaptive rehabilitation. In Proceedings of the 12th ACM International Conference on PErvasive Technologies Related to Assistive Environments (PETRA '19). Association for Computing Machinery, New York, NY, USA, 475–481. <a href="https://doi.org/10.1145/3316782.3322772" target="_blank" rel="noopener noreferrer">https://doi.org/10.1145/3316782.3322772</a></em></p>
+<h3 id="task-1" tabindex="-1"><a class="observablehq-header-anchor" href="#task-1">Task</a></h3>
+<p>Predict subjective fatigue (binary) ocurrence during exercise performance using EMG data.</p>
+<h3 id="protocol" tabindex="-1"><a class="observablehq-header-anchor" href="#protocol">Protocol</a></h3>
+<ul>
+<li>perform exercise (3 exercises; shoulder flexion (SF), shoulder abduction (SA) and elbow extension (EE)) using Barret WAM arm (give feedback force)</li>
+<li>push against resistor as long as possible</li>
+<li>when feeling fatigued -&gt; tell experimenter (who marks the time point)</li>
+<li>hold for 10 more seconds</li>
+<li>go back to starting position</li>
+</ul>
+<p>3 repetitions of each exercise with short breaks in between</p>
+<h3 id="sample" tabindex="-1"><a class="observablehq-header-anchor" href="#sample">Sample</a></h3>
+<p>10 users × 3 exercises × 3 repetitions = 90 EMG recordings.
+Sampling frequency: 1926HZ</p>
+<h3 id="pre--processing" tabindex="-1"><a class="observablehq-header-anchor" href="#pre--processing">Pre- Processing</a></h3>
+<ol>
+<li>Median filtering technique with a window size of 11 samples</li>
+<li>Extract short-term features (see below)</li>
+<li>Calculate mid-term features (see below)</li>
+</ol>
+<h3 id="features-2" tabindex="-1"><a class="observablehq-header-anchor" href="#features-2">Features</a></h3>
+<ul>
+<li>Short-term features based on non-overlapping windows with a length of 0.25 seconds
+<ul>
+<li>Minimum</li>
+<li>Maximum</li>
+<li>Standard Deviation</li>
+<li>Mean</li>
+<li>Spectral Minimum</li>
+<li>Spectral Maximum</li>
+<li>Spectral Standard Deviation</li>
+<li>Spectral Mean</li>
+<li>Spectral Entropy</li>
+<li>Spectral Flux</li>
+<li>Zero Crossing Rate</li>
+<li>Energy Entropy</li>
+<li>Wilson Amplitude (WAMP)</li>
+<li>for each of the above compute delta between the present set of features and the set of features extracted from the preceeding window</li>
+</ul>
+</li>
+<li>Mid-term features based on overlapping windows with a length of 2 seconds and a window step of 1
+<ul>
+<li>each set of 8 successive short-term feature vectors is described using the minimum, maximum, standard devation and mean information extracted from the short-term feature</li>
+</ul>
+</li>
+</ul>
+<h3 id="feature-selection" tabindex="-1"><a class="observablehq-header-anchor" href="#feature-selection">Feature Selection</a></h3>
+<p>No inherent computational feature selection.
+The above features were selected based on past literature, additional features were also used during experimentation but not included in the final model due to bad performance.</p>
+<h3 id="models" tabindex="-1"><a class="observablehq-header-anchor" href="#models">Models</a></h3>
+<p>Linear SVM, SVM with an RBF Kernel, Gradient-Boosting (GB), Extra-Trees (ET) and Random Forests (RF)</p>
+<h3 id="post-processing" tabindex="-1"><a class="observablehq-header-anchor" href="#post-processing">Post Processing</a></h3>
+<p>Classifier makes predictions on a mid-term level -&gt; need to be mapped to longt-term level (i.e. one predcition per sample)</p>
+<ol>
+<li>Median-filter of size K to the original predictions made by the classifier</li>
+<li>Gather the successive assigned labels into groups of M</li>
+<li>"If in the N past groups, the total number of samples that have been identified as ’FATIGUE’ exceeds a specific threshold, then and only then the method decides that the subject has shown signs of fatigue. Otherwise it assumes that the classification algorithm found a set of false positives and the process continues as if the subject has not been fatigued." <br></li>
+</ol>
+<img src="./_file/images/image.acaa422e.png" alt="drawing" width="400">
+<p>hyper-parameters were set to K1 = 3, M = 3,STEP = 1,N = 2,THRESH_VAL = 0.6 and K2 = 11</p>
+<h3 id="results-1" tabindex="-1"><a class="observablehq-header-anchor" href="#results-1">Results</a></h3>
+<p>-&gt; results vary across tests, for  single user evaluation Extra Trees are strongest (78%)</p>
+<h2 id="kefalas%2C-2023" tabindex="-1"><a class="observablehq-header-anchor" href="#kefalas%2C-2023"><a href="https://hdl.handle.net/1887/3511983" target="_blank" rel="noopener noreferrer">Kefalas, 2023</a></a></h2>
+<p><em>Kefalas, M. (2023, January 19). Data-driven predictive maintenance and time- series applications. Retrieved from <a href="https://hdl.handle.net/1887/3511983" target="_blank" rel="noopener noreferrer">https://hdl.handle.net/1887/3511983</a></em></p>
+<p>as well as</p>
+<p><em>M.R. Tannemaat, M. Kefalas, V.J. Geraedts, L. Remijn-Nelissen, A.J.M. Verschuuren, M. Koch, A.V. Kononova, H. Wang, T.H.W. Bäck, Distinguishing normal, neuropathic and myopathic EMG with an automated machine learning approach, Clinical Neurophysiology, Volume 146, 2023, Pages 49-54, ISSN 1388-2457, <a href="https://doi.org/10.1016/j.clinph.2022.11.019" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.clinph.2022.11.019</a>. (<a href="https://www.sciencedirect.com/science/article/pii/S1388245722009622" target="_blank" rel="noopener noreferrer">https://www.sciencedirect.com/science/article/pii/S1388245722009622</a>)</em></p>
+<h3 id="task-2" tabindex="-1"><a class="observablehq-header-anchor" href="#task-2">Task</a></h3>
+<p>Build an automated time-series classification algorihtm to distinguish EMG time-series of healthy individuals and individuals either neuropathic or myopathic diseases by considering the two types of disease as one disease class</p>
+<h3 id="protocol-1" tabindex="-1"><a class="observablehq-header-anchor" href="#protocol-1">Protocol</a></h3>
+<p>Data has been collected during routine clinical care</p>
+<ul>
+<li>patients are asked to muscle at rest, during slight activation, and during (near-) maximal activation</li>
+<li>the last 40s are recorded</li>
+</ul>
+<h3 id="sample-1" tabindex="-1"><a class="observablehq-header-anchor" href="#sample-1">Sample</a></h3>
+<p>380 muscle recordings from 65 muscles (at rest or at maximum con- traction) based on 65 patients with IBM (n = 20), ALS (n = 20) and healthy (control group) (n = 25)</p>
+<p>collected using concentric needle electrodes</p>
+<p>data were recorded with two sampling rates, namely 4800Hz and 5000Hz comprising of 16642 and 14279 traces</p>
+<p>For this study, the .</p>
+<h3 id="pre-processing-2" tabindex="-1"><a class="observablehq-header-anchor" href="#pre-processing-2">Pre-Processing</a></h3>
+<ul>
+<li>longest artifact-free series of consecutive 0.2s segments from every muscle recording were selected rigorously by clinicians through visual inspection</li>
+<li>5-second time-series were constructed by stitching together consecutive 0.2s segments of each unique ID (i.e. patient, muscle + side) -&gt;  at 4800Hz results in 24000 data points per examined muscle.</li>
+</ul>
+<h3 id="features-3" tabindex="-1"><a class="observablehq-header-anchor" href="#features-3">Features</a></h3>
+<p>Features are extracted based on the Python time series processing package 'tsfresh': <a href="https://tsfresh.readthedocs.io/en/latest/text/quick_start.html" target="_blank" rel="noopener noreferrer">https://tsfresh.readthedocs.io/en/latest/text/quick_start.html</a></p>
+<h3 id="feature-selection-1" tabindex="-1"><a class="observablehq-header-anchor" href="#feature-selection-1">Feature Selection</a></h3>
+<p>The feature selection algorithm "boruta" is used.
+<img src="./_file/images/image-4.d7b81c5c.png" alt="drawing" width="400"></p>
+<h3 id="model" tabindex="-1"><a class="observablehq-header-anchor" href="#model">Model</a></h3>
+<p>Random forest model</p>
+<h3 id="hyperparameters" tabindex="-1"><a class="observablehq-header-anchor" href="#hyperparameters">Hyperparameters</a></h3>
+<p>Hyperparameter Optimization using Mixed-integer Parallel Efficient Global Optimization (MIP-EGO) for optimizing F1-macro score of a 10-fold cross-validation
+Executed 200 times</p>
+<img src="./_file/images/image-1.ee1753cf.png" alt="drawing" width="400">
+<h3 id="results-2" tabindex="-1"><a class="observablehq-header-anchor" href="#results-2">Results</a></h3>
+<p>Evaluation based on 10-fold Cross Validation
+<img src="./_file/images/image-2.49b52085.png" alt="drawing" width="400"></p>
+<h2 id="jaiswal%2C-2022" tabindex="-1"><a class="observablehq-header-anchor" href="#jaiswal%2C-2022"><a href="https://arxiv.org/abs/2205.00287" target="_blank" rel="noopener noreferrer">Jaiswal, 2022</a></a></h2>
+<p><em>Jaiswal, Ashish; Zaki Zadeh, Mohammad; Hebri, Aref; Mekdon, Fillia (2022):Assessing Fatigue with Multimodal Wearable Sensors and Machine Learning. arXiv: <a href="https://arxiv.org/abs/2205.00287." target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2205.00287.</a></em></p>
+<h3 id="task-3" tabindex="-1"><a class="observablehq-header-anchor" href="#task-3">Task</a></h3>
+<p>Predict self-reported cognitive fatigue (CF) and physical fatgiue (PF) based on ECG, EMG &amp; EDA</p>
+<h3 id="protocol-2" tabindex="-1"><a class="observablehq-header-anchor" href="#protocol-2">Protocol</a></h3>
+<ul>
+<li>take baseline reading from the sensors while subject stood still for 1 min - reading 1</li>
+<li>participants were asked to perform 2 roundsets of 0-Back tasks (to induce CF) - reading 2</li>
+<li>particpants were asked to run on a treadmill for 90s (to induce PF) -reading 3</li>
+<li>participants were asked to perfrom 6 rounds of 2-back tasks (to induce CF) - reading 4
+participants were asked to perform 2 roundsets of 0-Back tasks - reading 5</li>
+<li>additional data collection after subject stood still for 90s - reading 6?</li>
+</ul>
+<h3 id="sample-2" tabindex="-1"><a class="observablehq-header-anchor" href="#sample-2">Sample</a></h3>
+<p>32 healthy people</p>
+<h3 id="pre-processing-3" tabindex="-1"><a class="observablehq-header-anchor" href="#pre-processing-3">Pre-Processing</a></h3>
+<p>readings 1,2,3 were labelled as "No CF"
+reading 3 was labelled as "PF"
+readings 4,5 were labelled as "CF" and not considered for PF analysis</p>
+<p>split signal into mulitple slices based on different window sizes (5 seconds, 10 seconds, 20 seconds)
+each slice was labeld the same as the original signal label
+whole signal block was classified based on the higher count of the class among the classified slices</p>
+<h3 id="model-1" tabindex="-1"><a class="observablehq-header-anchor" href="#model-1">Model</a></h3>
+<p>70% train, 15% validation and 15% test sets (on a per subject level)
+5 fold cross validation</p>
+<ul>
+<li>logistic regression</li>
+<li>support vector machines</li>
+<li>random forest</li>
+<li>long short-term memory</li>
+</ul>
+<h3 id="features-4" tabindex="-1"><a class="observablehq-header-anchor" href="#features-4">Features</a></h3>
+<p>169 combined features from ECG, EDA, and EMG for training the ML models</p>
+<p>ECG:</p>
+<ul>
+<li>Pan, and Tompkins QRS detection algorithm</li>
+<li>leaned the signals using a high-pass Butterworth filter with a fixed cut-off frequency of 0.5 Hz</li>
+<li>notch filter was applied to the cleaned signal to remove components with 50 Hz frequency and avoid power line interference</li>
+<li>RR intervals were extracted using the R Peaks from the signal and were cleaned by removing the outliers</li>
+<li>missing values were substituted using the linear interpolation method</li>
+<li>113 time-domain and frequency-domain features, including heart rate variability (HRV) metrics were extracted</li>
+</ul>
+<p>EDA:</p>
+<ul>
+<li>passed through a low-pass Butter- worth signal with a cut-off frequency of 3 Hz</li>
+<li>extraction of phasic component of EDA signal</li>
+<li>Skin Conductance Response (SCR)</li>
+</ul>
+<p>EMG:</p>
+<ul>
+<li>time domain and frequency domain features were extracted</li>
+</ul>
+<p>Most of the feature extraction was carried out using the package named <a href="https://github.com/neuropsychology/NeuroKit" target="_blank" rel="noopener noreferrer">Neurokit2</a></p>
+<h3 id="results-3" tabindex="-1"><a class="observablehq-header-anchor" href="#results-3">Results</a></h3>
+<img src="./_file/images/image-5.19733d11.png" alt="drawing" width="400">
+<h2 id="yaman%2C-2019" tabindex="-1"><a class="observablehq-header-anchor" href="#yaman%2C-2019"><a href="./10.1155/2019/9152506">Yaman, 2019</a></a></h2>
+<p><em>Yaman E, Subasi A. Comparison of Bagging and Boosting Ensemble Machine Learning Methods for Automated EMG Signal Classification. Biomed Res Int. 2019 Oct 31;2019:9152506. doi: 10.1155/2019/9152506. PMID: 31828145; PMCID: PMC6885261.</em></p>
+<h3 id="task-4" tabindex="-1"><a class="observablehq-header-anchor" href="#task-4">Task</a></h3>
+<p>Classify persons as "Normal", "Myopathy", or "Neuropathy" based on needle EMG data measured on the biceps brachii muscle</p>
+<h3 id="sample-3" tabindex="-1"><a class="observablehq-header-anchor" href="#sample-3">Sample</a></h3>
+<p>7 control patients, 7 myopathic subjects and 14 neurpathic subjects</p>
+<h3 id="pre-processing-4" tabindex="-1"><a class="observablehq-header-anchor" href="#pre-processing-4">Pre Processing</a></h3>
+<p>signals were collected at 20 kHz for 5 seconds at 12-bit res- olution and band-pass-filtered at 5 Hz to 10 kHz</p>
+<p>EMG signals are divided into frames with a length of 2048 samples</p>
+<p>Decomposition of the EMG signals using wavelet packet transform up to level 4</p>
+<h3 id="features-5" tabindex="-1"><a class="observablehq-header-anchor" href="#features-5">Features</a></h3>
+<ul>
+<li>Coefficients’ mean absolute values in every subband</li>
+<li>Average power of the coefficients in each subband</li>
+<li>Standard deviation of the coefficients in each
+subband</li>
+<li>Ratio of the absolute mean values of coefficients of adjacent subbands</li>
+<li>Skewness of the coefficients in each subband</li>
+<li>Kurtosis of the coefficients in each subband</li>
+</ul>
+<h3 id="models-1" tabindex="-1"><a class="observablehq-header-anchor" href="#models-1">Models</a></h3>
+<h3 id="results-4" tabindex="-1"><a class="observablehq-header-anchor" href="#results-4">Results</a></h3>
+<p>10-fold cross-validation</p>
+<img src="./_file/images/image-6.5bd4383a.png" alt="drawing" width="400">
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-06-19T22:11:46">Jun 19, 2024</a>.</div>
+</footer>
+</div>

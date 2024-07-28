@@ -1,0 +1,67 @@
+@import url("observablehq:default.css");
+@import url("observablehq:theme-deep-space.css");
+@import url("observablehq:theme-wide.css");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+  --theme-foreground: #7B7B7B;
+  --theme-foreground-focus:   #A07ECE;
+  --theme-foreground-faintest: #FCE2D0;
+  --theme-foregorund-fainter: #EFB4A0;
+  --theme-foreground-faint:#FF914D;
+  --theme-foreground-alt: #636160;
+  --theme-foreground-muted: #7B7B7B;
+  --theme-background: #fff9f1;
+  --theme-background-alt: #fff9f1
+
+
+}
+
+
+
+body, svg {
+  font-family: var(--sans-serif);
+  max-width: none;
+     /* font-size: 48px; */
+}
+h1 {
+color: var(  --theme-foreground-alt);
+font-family: Poppins;
+font-weight: normal;
+}
+h2 {
+color: var(  --theme-foreground-alt);
+font-family: Poppins;
+font-weight: normal;
+}
+
+h3 {
+  color: var(  --theme-foreground-alt);
+  font-family: Poppins;
+  font-weight: normal;
+}
+p {
+font-family: "Open Sans"
+}
+
+h1:hover{
+  text-decoration: none;
+}
+  
+  a:hover {
+      text-decoration: none;
+  }
+#observablehq-main,
+#observablehq-header,
+#observablehq-footer {
+  max-width: none;
+}
+/* :root {
+  --theme-foreground-focus: #FBCEB1;
+  --theme-foreground-faintest: #f7a068;
+  --theme-foregorund-fainter: #f9b080;
+  --theme-foreground-faint:#fcddc9;
+  --theme-foreground-muted:#FBCEB1;
+}
+    */

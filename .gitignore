@@ -1,0 +1,8 @@
+pipeline/data/
+pipeline/data_features/
+pipeline/data_pre_processed/
+pipeline/raw_data_new/
+pipeline/raw_data_old/
+pipeline/survey_data/
+pipeline/feature_extraction/playground.ipynb
+pipeline/data/
