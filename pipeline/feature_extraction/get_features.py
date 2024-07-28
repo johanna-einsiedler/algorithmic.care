@@ -8,6 +8,34 @@ import pickle
 import os
 import sys
 
+intervals = ['sit_relaxed_1','muscle_contraction_1','rest_1','muscle_contraction_2','rest_2','muscle_contraction_3','prep_wallsit','wallsit','sit_down','sit_relaxed_2']
+
+
+def short_features(input):
+    if isinstance(input, str):
+    # read in data
+        df = pd.read_pickle(input)
+    else:
+        df =input 
+    df_subs = pd.DataFrame()
+    for interval in intervals:
+        df_sub = df[df['interval'] == interval]
+    
+        # take a baseline from the end of sit relaxed one of 2s
+        if np.isin(interval, ['sit_relaxed_1']):
+            df_sub = df_sub[np.isin(df_sub['time'],[25,27])]
+        
+        # if its a muscle contraction interval, take the middle two seconds
+        if np.isin(interval, ['muscle_contraction_1', 'muscle_contraction_2','muscle_contraction_3']):
+            df_sub = df_sub[(df_sub['time'] > df_sub['time'].min()+2) * (df_sub['time'] < df_sub['time'].max()-2)]
+        
+        df_sub_features = get_emg_features(df_sub)
+        df_subs = pd.concat([df_subs, df_sub_features])
+    
+    return df_subs
+
+
+
 def get_emg_features(input):
 
    
@@ -25,7 +53,19 @@ def get_emg_features(input):
 
     df['emg_envelope'] = sp.signal.filtfilt(b2, a2, df['signal_emg'])
 
-    df_features = features_estimation(df['emg_envelope'], 'EMG Signal', sr, 500, 250, plot=False)
+    df_features = features_estimation(df['emg_envelope'], 'EMG Signal', sr, 500, 500, plot=False)[0]
+    df_features = df_features.transpose()
+
+    df_features.loc[df_features.index<30,'interval'] = 'sit_relaxed_1'
+    df_features.loc[(30*2<df_features.index)*(df_features.index<36*2),'interval'] = 'muscle_contraction_1'
+    df_features.loc[(36*2<df_features.index)*(df_features.index<46*2),'interval'] = 'rest_1'
+    df_features.loc[(46*2<df_features.index)*(df_features.index<52*2),'interval'] = 'muscle_contraction_2'
+    df_features.loc[(52*2<df_features.index)*(df_features.index<62*2),'interval'] = 'rest_2'
+    df_features.loc[(62*2<df_features.index)*(df_features.index<68*2),'interval'] = 'muscle_contraction_3'
+    df_features.loc[(68*2<df_features.index)*(df_features.index<88*2),'interval'] = 'prep_wallsit'
+    df_features.loc[(88*2<df_features.index)*(df_features.index<108*2),'interval'] = 'wallsit'
+    df_features.loc[(108*2<df_features.index)*(df_features.index<123*2),'interval'] = 'sit_down'
+    df_features.loc[(123*2<df_features.index)*(df_features.index<153*2),'interval'] = 'sit_relaxed_2'
 
     return df_features
 

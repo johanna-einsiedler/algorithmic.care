@@ -43,12 +43,12 @@ toc: false
   text-align: center;
   /* font-weight: 900; */
   line-height: 1;
-  background: linear-gradient(30deg, var(   --theme-foreground-faint), currentColor);
+  /*background: linear-gradient(30deg, var(   --theme-foreground-faint), currentColor);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-clip: text;*/
   font-size: 5em;
-  color: #fff;
+  color: #636160;
   text-align: center;
 
 }

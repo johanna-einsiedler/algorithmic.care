@@ -12,4 +12,4 @@ title: Code
 </style>
 
 # Code
-All code for this project can be found on [Github](https://github.com/johanna-einsiedler/ITU_spring_term_AB_JE/tree/main)
+All code for this project can be found on [Github](https://github.com/johanna-einsiedler/algorithmic.care/tree/main)

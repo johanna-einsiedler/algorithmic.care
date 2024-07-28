@@ -9,7 +9,7 @@ title: About
 
 The artistic dimension of the project  is realized in an installation that mimics a tech store, turning a critical lens on the commercialization of personal data. This environment not only displays the smartwatch and visualizes the study’s findings but also engages visitors in a dialogue about the political and ethical implications of biometric data usage, serving as both a critique and a call to action, urging visitors to reconsider the control they relinquish over their personal data. 
 
-The project is part of the [Founding Lab of the International Transformation University Linz](https://it-u.at/en/).
+The project is part of the [Founding Lab of the Interdisciplinary Transformation University Linz](https://it-u.at/en/).
 
 
 # About the people
