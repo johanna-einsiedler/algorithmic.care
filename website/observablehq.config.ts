@@ -12,6 +12,7 @@ export default {
        name: "",
        pages: [
         {name: "About", path: "/about"},
+        {name: "N=1", path: "/n=1"},
         {name: "N=2", path: "/n=2"},
          {name: "Protocol", path: "/protocol"},
          {name: "Apricot Sensor-Kit N2", path: "/sensor-kit"},
