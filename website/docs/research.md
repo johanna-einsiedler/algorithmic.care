@@ -11,7 +11,7 @@ title: Literature Review
 # Studies trying to predict fatigue based on EMG data
 
 ## [Li, 2024](https://dl.acm.org/doi/pdf/10.1145/3648679)
->Na Li, Rui Zhou, Bharath Krishna, Ashirbad Pradhan, Hyowon Lee, Jiayuan He, and Ning Jiang. 2024. Non-invasive Techniques for Muscle Fatigue Monitoring: A Comprehensive Survey. ACM Comput. Surv. 56, 9, Article 221 (September 2024), 40 pages. https://doi.org/10.1145/3648679<
+> Na Li, Rui Zhou, Bharath Krishna, Ashirbad Pradhan, Hyowon Lee, Jiayuan He, and Ning Jiang. 2024. Non-invasive Techniques for Muscle Fatigue Monitoring: A Comprehensive Survey. ACM Comput. Surv. 56, 9, Article 221 (September 2024), 40 pages. https://doi.org/10.1145/3648679 
 
 ### Fatigue Measurement
 
@@ -32,12 +32,10 @@ EMG Pre Processing
 full-wave rectification and half-wave rectification)
     - most commonly used EMG signal filter is essentially a finite impulse response bandpass filter with a cutoff point of 20 Hz and 500 Hz
 - temporal windowing
-    - slice” continuoussEMG data into shortsegmentsforsubsequent analyses - analysis window length should not exceed 200 ms (Huang et al.)
+    - slice” continuouss EMG data into short segments for subsequent analyses - analysis window length should not exceed 200 ms (Huang et al.)
     - 150–250 ms as the optimal tradeoff between the classification accuracy and the delay
-    - 200–300 ms for the disjoint (Smith et al.)
-and 225–300 ms for the overlap windowing technique, respectively (Ashraf et al.)
--  smoothing (e.g., Average Rectified Value
-(ARV) and Root Mean Square (RMS))
+    - 200–300 ms for the disjoint (Smith et al.) and 225–300 ms for the overlap windowing technique, respectively (Ashraf et al.)
+-  smoothing (e.g., Average Rectified Value (ARV) and Root Mean Square (RMS))
 -  amplitude normalization [55]
 
 ### Features
