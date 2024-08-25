@@ -36,7 +36,7 @@ full-wave rectification and half-wave rectification)
     - 150–250 ms as the optimal tradeoff between the classification accuracy and the delay
     - 200–300 ms for the disjoint (Smith et al.) and 225–300 ms for the overlap windowing technique, respectively (Ashraf et al.)
 -  smoothing (e.g., Average Rectified Value (ARV) and Root Mean Square (RMS))
--  amplitude normalization [55]
+-  amplitude normalization
 
 ### Features
 #### EMG
@@ -46,8 +46,8 @@ Time domain features:
 
 Frequency domain features:
 - Fast Fourier Transform (FFT) and then extract power spectrum characteristics
-- Mean Power Frequency (MPF): average frequency at which the sum of the product of the EMG power spectrum and frequency is divided by the total
-- Median Frequency (MDF)
+    - Mean Power Frequency (MPF): average frequency at which the sum of the product of the EMG power spectrum and frequency is divided by the total
+    - Median Frequency (MDF)
 
 Other methods:
 - Short-time Fourier Transform (STFT): time-localized frequency information for situations in which frequency components of a signal vary over time

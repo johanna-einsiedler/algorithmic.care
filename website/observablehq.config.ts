@@ -18,6 +18,7 @@ export default {
          {name: "Apricot Sensor-Kit N2", path: "/sensor-kit"},
          {name: "Research", path: "/research"},
          {name: "Code", path: "/code"},
+         {name: 'Prediction', path: '/prediction'}
         // {name: "EMG Data", path: "/emg_data"},
        ],
   
