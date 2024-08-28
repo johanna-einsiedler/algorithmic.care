@@ -13,7 +13,7 @@ title: Study Protocol
 </style>
 
 # Study Protocol
-<sup>*Last edited: June 14th, 2024*</sup>
+## Developing a way to consistenly collect data about our bodies
 
 ## Variables to be Collected
 - Muscle Data [2x per day - one time in the morning after waking up, one time in the evening]

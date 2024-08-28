@@ -12,13 +12,15 @@ export default {
        name: "",
        pages: [
         {name: "About", path: "/about"},
+        {name: 'The Study', path: '/prediction'},
         {name: "N=1", path: "/n=1"},
         {name: "N=2", path: "/n=2"},
          {name: "Protocol", path: "/protocol"},
          {name: "Apricot Sensor-Kit N2", path: "/sensor-kit"},
+         {name: "Nectar Core Watch", path: "/watch"},
+         {name: "Podcast", path: "/podcast"},
          {name: "Research", path: "/research"},
          {name: "Code", path: "/code"},
-         {name: 'Prediction', path: '/prediction'}
         // {name: "EMG Data", path: "/emg_data"},
        ],
   

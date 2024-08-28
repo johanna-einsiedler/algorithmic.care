@@ -87,7 +87,7 @@ const colorCoffee = Plot.scale({color: {range: ['white','#A07ECE'], domain: [0,M
 function CorrelationPlot() {
   return Plot.plot({
     marginLeft: 150,
-    width: 800,
+    width: 600,
     y:{label: 'Variable'},
     color: {
       type: 'linear',
@@ -254,7 +254,7 @@ function CorrelationPlot() {
 ```js
 display(CorrelationPlot())
 
-// define prediction plot
+// define plot of values over time (currently not shown)
 function LinePlot() {
   return Plot.plot({
     y: { domain: [1, 7] },
@@ -336,7 +336,7 @@ function calculateMeanDifference(array1, array2, property) {
 let maxDate = Math.max(...predictions2.map(obj => obj.date))
 let minDate = Math.min(...predictions2.map(obj => obj.date))
 
-
+// function for prediction  lineplot
 function PredictionPlot(model, variable, width) {
   return Plot.plot({
     x: {
@@ -487,4 +487,140 @@ Well... it seems like fatigue levels and behavior are not too much indicative of
 </div>
 
 
+```js
+let rawEMGExample = FileAttachment('data/amanda_raw_emg_example.csv')
+  .csv({ typed: true })
 
+let bandpassEMGExample = FileAttachment('data/amanda_bandpass_emg_example.csv')
+  .csv({ typed: true })
+
+let rectEMGExample = FileAttachment('data/amanda_rect_emg_example.csv')
+  .csv({ typed: true })
+
+let normEMGExample = FileAttachment('data/amanda_norm_emg_example.csv')
+  .csv({ typed: true })
+```
+
+```js
+let startTabata = 32.7
+function EMGPlot(data, title,width) {
+  
+  return Plot.plot({
+    //axis: null,
+      height: 150,
+      width: width,
+       grid: true,
+  marginRight: 60,
+  marginBottom:60,
+  facet: {data: data, x: "Signal type", label: title, fontSize: 35,style: {
+    fontSize: 30,
+  }},
+  x:{label:null},
+  y:{label: null},
+    marks:[
+    
+        Plot.lineY(
+        data,
+        {
+        x: 'Time',
+        y: 'Signal',
+        opacity: 0.7,
+
+        }
+      ),
+    // mark start of sections
+    Plot.ruleX(data.filter(d => d['Processing stage'] === 'Normalized signal'), {x: [startTabata], stroke: "#A07ECE", strokeWidth: 2}),
+    Plot.ruleX(data.filter(d => d['Processing stage'] === 'Normalized signal'), {x: [startTabata+16], stroke: "#A07ECE", strokeWidth: 2}),
+    Plot.ruleX(data.filter(d => d['Processing stage'] === 'Normalized signal'), {x: [startTabata+32], stroke: "#A07ECE", strokeWidth: 2}),
+    Plot.ruleX(data.filter(d => d['Processing stage'] === 'Normalized signal'), {x: [startTabata+58], stroke: "#A07ECE", strokeWidth: 2}),
+    Plot.ruleX(data.filter(d => d['Processing stage'] === 'Normalized signal'), {x: [startTabata+93], stroke: "#A07ECE", strokeWidth: 2}),
+
+
+    // label start of sections
+    Plot.text(data.filter(d => d['Processing stage'] === 'Normalized signal'), {text:['Relax'], x: startTabata-30, dy:-20,  dx: -10, lineAnchor:'top', rotate: 270,fill: 'black'}),
+    Plot.text(data.filter(d => d['Processing stage'] === 'Normalized signal'), {text:['M1'], dy:-20,  dx: -10, lineAnchor:'top', rotate: 270,fill: 'black'}),
+    Plot.text(data.filter(d => d['Processing stage'] === 'Normalized signal'), {text:['M2'],  x: startTabata+16, dy:-20,  dx: -10, lineAnchor:'top', rotate: 270,fill: 'black'}),
+    Plot.text(data.filter(d => d['Processing stage'] === 'Normalized signal'), {text:['M3'],  x: startTabata+32, dy:-20,  dx: -10, lineAnchor:'top', rotate: 270,fill: 'black'}),
+    Plot.text(data.filter(d => d['Processing stage'] === 'Normalized signal'), {text:['Wallsit'],  x: startTabata+58, dy:-20,  dx: -10, lineAnchor:'top', rotate: 270,fill: 'black'}),
+    Plot.text(data.filter(d => d['Processing stage'] === 'Normalized signal'), {text:['Relax'],  x: startTabata+93, dy:-20,  dx: -10, lineAnchor:'top', rotate: 270,fill: 'black'}),
+
+    ]
+})
+}
+
+
+```
+
+<div class="grid grid-cols-2">
+<div>
+
+## Using Muscle Data
+
+In addition to the daily survey data, we also collected sensor data about muscle activity twice a day, using an <a href='/sensor-kit'> EMG & MMG sensor kit </a>, following a strict <a href='/protocol'> protocol </a>. A large body of literature has been trying to use these types of data to assess and/or predict (muscle) fatigue (see <a href='https://dl.acm.org/doi/10.1145/3648679'>here </a> for a great literature review or <a href="/research">here </a> for our summary) - with varying success.
+
+Based on the existing literature, we developed a protocol that we hoped would allow us to gather data with high enough quality to be of use while still being short and easy to follow such that we could integrate it in our daily schedule.
+
+### Pre-Processing
+
+In a first step, the EMG and MMG data was pre-processed. In this case we (1) substracted the mean and applied a bandpass filter with a lower bound of 50 and an upper bound 450 Hz, (2) rectified the signal and (3) performed amplitude normalization. The last plot also shows the starting points of the different phases in the <a href='/protocol'> protocol </a>, where 'M' stands for muscle contraction.
+
+</div>
+<div>
+ ${resize((width) => EMGPlot(rawEMGExample,'Raw signal', width))}
+${resize((width) => EMGPlot(bandpassEMGExample, 'Bandpass filtered signal',width))}
+ ${resize((width) => EMGPlot(rectEMGExample, 'Rectified signal',width))}
+ ${resize((width) =>EMGPlot(normEMGExample, 'Normalized signal',width))}
+    </div>
+  </div>
+
+```js
+let SignalFeatures = FileAttachment('data/amanda_features_example.csv')
+  .csv({ typed: true })
+```
+```js
+
+
+function FeaturesPlot(data) {
+  
+  return Plot.plot({
+    //axis: null,
+      //height: 150,
+     // width: 600,
+       grid: true,
+  marginRight: 60,
+  marginBottom:60,
+  fy:{label:null},
+  y:{axis:null},
+  facet: {data: data, y: "variable",  x:'Signal Type', fontSize: 35,style: {
+    fontSize: 30,
+  }},
+  x:{label:null},
+  y:{label: null},
+    marks:[
+       Plot.axisY({ticks: []}),
+    
+        Plot.lineY(
+        data,
+        {
+        x: 'START',
+        y: 'value',
+        opacity: 0.7,
+
+        }
+      ),
+    ]
+  })
+}
+
+```
+
+
+<div class="grid grid-cols-2">
+<div>
+<h3>Feature Extraction </h3>
+
+</div>
+<div>
+ ${resize((width) =>FeaturesPlot(SignalFeatures,width))}
+ </div>
+  </div>

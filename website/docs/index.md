@@ -37,7 +37,7 @@ toc: false
 .hero h1 {
   margin: 4rem 0;
   font-family: "Poppins";
-  padding-bottom: 5rem;
+  /*padding-bottom: 5rem;*/
   padding-top: 2rem;
   max-width: none;
   text-align: center;
@@ -48,7 +48,7 @@ toc: false
   -webkit-text-fill-color: transparent;
   background-clip: text;*/
   font-size: 5em;
-  color: #636160;
+  color: 'white';
   text-align: center;
 
 }
@@ -206,7 +206,7 @@ html {
 }
 
 .arrow {
-  border: solid #7B7B7B;
+  border: solid #000000;
   border-width: 0 10px 10px 0;
   display: inline-block;
   padding: 10px;
@@ -217,6 +217,26 @@ html {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  top: 0;
+  max-height:100%;
+ /*min-width: 100%;
+  min-height: 100%;*/
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  top: 0;
+  background: rgba(255, 249, 241, .7);
+  color: 'black';
+  height:100%;
+  width: 100%;
+}
+
 </style>
 
 
@@ -225,9 +245,13 @@ html {
 <section class="scroll-container">
  <div class="scroll-section" data-step="1" style="padding-bottom: 10rem">
    <div class=" hero">
-  <h1>Do algorithms care?</h1>
+  <video src="images/watches.mp4" id='myVideo' type="video/mp4" autoplay muted loop controls width='100%' ></video>
+  <div class="content">
+  <h1 style='color:black'>DO ALGORITMS CARE?</h1>
+    <a href="#section2">  <i class="arrow down"></i> </a>
+  </div>
     <center>
-  <a href="#section2">  <i class="arrow down"></i> </a>
+
   </center>
   </div>
   </div>
@@ -238,15 +262,28 @@ html {
   <video src="images/contraction_transparent.mp4" alt="drawing" width="300" autoplay muted loop type="video/mp4"> </video></center>
   </center>
   </div>
-<p><i>Do Algorithms Care?'</i> is an interdisciplinary collaboration between artist Amanda Bennetts and data scientist Johanna Einsiedler. At the core of this project is an n=1 study, typically challenged in scientific circles for its limited generalizability, yet here serves as a critical methodological pivot. 
+<p><i>Do Algorithms Care?'</i>  is an interdisciplinary collaboration between artist Amanda Bennetts (AU) and data scientist Johanna Einsiedler (AT). At the core of this project is an N=1 study, typically challenged in scientific circles for its limited generalizability, yet here serves as a critical methodological pivot. Using a DIY smartwatch and EMG (electromyography) and MMG (mechanomyogram) sensor kits, the duo engage in self-monitoring to collect their physiological data. This personalized data collection reflects a methodological shift in research practices, emphasizing the need for individual agency to manage and use biodata. The sensor measurements, smartwatch data and results from a wellbeing questionnaire are fed into a machine-learning model, developed to predict subjective fatigue. 
+
+
+
+
 </p>
-<p>  <a href="/about">More about the project </a>  |  <a href="/research">Research </a> |  <a href="/protocol">Protocol </a> | <a href="/code">Open Source Code </a></p>
-
-<p> The Quantified Self:     <a href="/n=2">N=2 </a> </p>
 
 
-  <div class="column"></div>
-    <a href="/research">Research </a>
+  <p>  <a href="/about">More about the project </a> |  <a href="/prediction">The Study</a>  |  <a href="/research">Research </a> |  <a href="/protocol">Protocol </a>  |<a href="/podcast">Podcast </a></p>
+
+<p> DIY Instructions:    <a href="/sensor-kit">Apricot Sensor-Kit N2 </a> |  <a href="/wathch"> Nectar Core Watch </a> | <a href="/code">Open Source Code </a> </p>
+
+<p> The Quantified Self:    <a href="/n=1">N=1 </a> |  <a href="/n=2">N=2 </a> </p>
+
+  <center>
+<p> <emph> Want to stay updated? </emp> </p>
+<iframe src="https://algorithmiccare.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+</center>
+<br>
+
+
+
  
 
   <div class="column"></div>
