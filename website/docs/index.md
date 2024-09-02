@@ -206,7 +206,7 @@ html {
 }
 
 .arrow {
-  border: solid #000000;
+  border: solid #636160;
   border-width: 0 10px 10px 0;
   display: inline-block;
   padding: 10px;
@@ -247,8 +247,10 @@ html {
    <div class=" hero">
   <video src="images/watches.mp4" id='myVideo' type="video/mp4" autoplay muted loop controls width='100%' ></video>
   <div class="content">
-  <h1 style='color:black'>DO ALGORITMS CARE?</h1>
-    <a href="#section2">  <i class="arrow down"></i> </a>
+  <div width ='90%'>
+  <h1 style='color:#636160'>DO ALGORITMS CARE?</h1>
+  </div>
+  <a href="#section2">  <i class="arrow down"></i> </a>
   </div>
     <center>
 

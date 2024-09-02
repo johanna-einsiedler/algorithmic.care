@@ -50,8 +50,14 @@ p {
 
 # The Study
 
-Amanda and Johanna both did a 35 day self-experiment: every day they would (1) take two muscle measurements (see <a href='/protocol#muscle-data-measurement-protocol'>protocol</a>)  - one in the morning after waking up, one in the evening before going to bed and (2) fill out a questionnaire (see <a href='/protocol#survey'>survey</a>).
-Based on this we sought to understand our own bodies better and try to see whether we can predict days of rest.
+To test (or maybe rather get some first impression), whether it is possible to predict **subjective** experiences of fatigue, for 35 days we (1) took two muscle measurements (see <a href='/protocol#muscle-data-measurement-protocol'>protocol</a>)  - one in the morning after waking up, one in the evening before going to bed and (2) filled out a questionnaire (see <a href='/protocol#survey'>survey</a>).
+
+We had three main outcomes of interest:
+- **Overall fatigue** [1-7]: Experienced level of fatigue throughout a day. Did we feel tired and worn out? Or rather energetic and motviated?
+- **Muscle soreness**[1-7]: Experienced level of muscle soreness throughout a day across the body. Were there any muscles that felt stiff or aching? Or did they rather feel 'fresh'? Supposed to relate to the physiological concept of peripheral muscle weakness (peripheral fatigue) (see <a href='http://127.0.0.1:3000/research#characterization-of-muscle-fatigue'> Davis, 1999 </a>).
+- **Muscle tiredness**[1-7]: Experienced level of muscle tiredness throught a day across the body. How 'worn out' did your muscle feel, how much willpower did you need to move?  Supposed to relate to the physiological concept of central nervous system muscle fatigue  (see <a href='http://127.0.0.1:3000/research#characterization-of-muscle-fatigue'> Davis, 1999 </a>).
+
+
 
 For the remainder you can pick a person whose data you want to explore: 
 ```js
@@ -78,16 +84,16 @@ const pickModelInput = Inputs.radio(uniqueNames.filter(item => item !== 'Ground 
 const pickModel = Generators.input(pickModelInput)
 
 // define max and respective color scale for variables
-const colorSteps = Plot.scale({color: {range: ['white','#A07ECE'], domain: [0,Math.max(...surveyData.map(obj => obj['Step Count']))]}});
-const colorSleep = Plot.scale({color: {range: ['white','#A07ECE'], domain: [0,Math.max(...surveyData.map(obj => obj['Sleep Time']))]}});
-const colorAlcohol = Plot.scale({color: {range: ['white','#A07ECE'], domain: [0,Math.max(...surveyData.map(obj => obj['Alcohol Intake']))]}});
-const colorCoffee = Plot.scale({color: {range: ['white','#A07ECE'], domain: [0,Math.max(...surveyData.map(obj => obj['Coffee Intake']))]}});
+const colorSteps = Plot.scale({color: {range: ['#fff9f1','#A07ECE'], domain: [0,Math.max(...surveyData.map(obj => obj['Step Count']))]}});
+const colorSleep = Plot.scale({color: {range: ['#fff9f1','#A07ECE'], domain: [0,Math.max(...surveyData.map(obj => obj['Sleep Time']))]}});
+const colorAlcohol = Plot.scale({color: {range: ['#fff9f1','#A07ECE'], domain: [0,Math.max(...surveyData.map(obj => obj['Alcohol Intake']))]}});
+const colorCoffee = Plot.scale({color: {range: ['#fff9f1','#A07ECE'], domain: [0,Math.max(...surveyData.map(obj => obj['Coffee Intake']))]}});
 
 // plot correlation matrix over time
-function CorrelationPlot() {
+function CorrelationPlot(width) {
   return Plot.plot({
     marginLeft: 150,
-    width: 600,
+    width: width,
     y:{label: 'Variable'},
     color: {
       type: 'linear',
@@ -250,9 +256,9 @@ function CorrelationPlot() {
 </div>
 </div>
 
+${resize((width) => CorrelationPlot(width))}
 
 ```js
-display(CorrelationPlot())
 
 // define plot of values over time (currently not shown)
 function LinePlot() {
@@ -300,7 +306,7 @@ function LinePlot() {
 
 # Predictions based on Survey Data
 
-## Does how we feel today say something about how we will feel tomorrow?
+## Are there patterns in our wellbeing that we aren't conciously aware off?
 
 In a first step, we explored whether we can predict subjective experience of fatigue, muscle soreness and muscle tiredness for the next day based on information collected through the <a href='/protocol'>questionnaire </a> the day before. We tested several machine learning models and compared them to (1) our own prediction of how we would feel the next day and (2) always predicting the mean level.
 
@@ -337,7 +343,7 @@ let maxDate = Math.max(...predictions2.map(obj => obj.date))
 let minDate = Math.min(...predictions2.map(obj => obj.date))
 
 // function for prediction  lineplot
-function PredictionPlot(model, variable, width) {
+function PredictionPlot(predictions, model, variable, width) {
   return Plot.plot({
     x: {
       tickFormat: d3.utcFormat('%b %e'),
@@ -355,7 +361,7 @@ function PredictionPlot(model, variable, width) {
       Plot.ruleY([0]),
       //Plot.areaY(predictions2.filter((d) => d.model === "Human Prediction"), {x: "date", y: "cis_subjective_fatigue", fillOpacity: 0.2}),
       Plot.lineY(
-        predictions2.filter(d => d.model === model),
+        predictions.filter(d => d.model === model),
         {
           x: 'date',
           y: variable,
@@ -367,16 +373,16 @@ function PredictionPlot(model, variable, width) {
       ),
 
       Plot.dot(
-        predictions2.filter(d => d.model === 'Ground Truth'),
+        predictions.filter(d => d.model === 'Ground Truth'),
         { x: 'date', y: variable, r: 2, symbol: 'model' }
       ),
       Plot.dot(
-        predictions2.filter(d => d.model === model),
+        predictions.filter(d => d.model === model),
         { x: 'date', y: variable, r: 2, symbol: 'model' }
       ),
 
       Plot.lineY(
-        predictions2.filter(d => d.model === 'Ground Truth'),
+        predictions.filter(d => d.model === 'Ground Truth'),
         {
           x: 'date',
           y: variable,
@@ -406,7 +412,7 @@ function PredictionPlot(model, variable, width) {
         }
       ),
       Plot.areaY(
-        predictions2.filter(
+        predictions.filter(
           d => d.model === model || d.model === 'Ground Truth'
         ), //  Plot.windowY(
         //  14,
@@ -433,11 +439,9 @@ function PredictionPlot(model, variable, width) {
   })
 }
 
-if (pickPerson==='Amanda') {
-  document.getElementById('text-container').innerHTML = "Generally speaking, Amanda's predictions of her muslce sorness & tiredness levels for the next days, were as accurate as just always predicting the mean value. For the overall fatigue level her own predictions were even worse than that - mostly she is too pessimistic. When it comes to the different models, in terms of absolute error, none of them consistently achieves a lower average than just always predicting the mean. The multiseries models (i.e. time series models the aim to jointly predict future values of multiple outcome variables) generally performed worst - a reason for this could be that those models are trying to reduce the overall prediction error. Thus, they might need to 'compromise' which can be a disadvantage if the additional information gain from including those other variables is small. The best performing models were (1) the single time series gradient boosting model - indicating that we do observe some degree of autocorrelation and (2) the lasso regression model. <br> In an attempt to understand better whats going on we can take a look at the most relevant predictors in the lasso model: <ul> <li> 'I am full of plans' was negatively correlated with all outcomes, i.e. having a lot of plans made it more likely for Amanda to experiences low levels of fatigue, muscle soreness and muscle tiredness on the next day </li> <li>'I didn`t do much during the day' was negatively correlated with muscle soreness, i.e. if Amanda didn't do much on a particular day it was unlikely for her to experience muscle soreness on the next day </li> <li> 'I could concentrate well' was positively correlated with muscle soreness & tiredness, i.e. days were it was easy to concentrate often preceded days with a high level of muscle soreness. This one is somewhat surprising - maybe days where concentration was high usually were somewhat intense work days, which could then lead to stress and then trigger muscle impairment? Interestingly enough it was not relevant for the overall fatigue level prediction. </li> <li> Muscle Soreness & Tiredness: a given days level of muscle soreness and tiredness postively correlated with the next days values, i.e. we observe some autocorrelation </li> <li> Self-predicted fatigue level: the surey takers own prediction of how fatigued they would feel on the next day did have some predictive power for muscle soreness and tiredness, not so for overall fatigue however </li> </ul>"
-} else if (pickPerson==='Johanna') {
-  document.getElementById('text-container').innerHTML = "Generally speaking, Johanna's own predictions for overall fatigue and muscle tiredness were worse than always just predicting the mean. For muscle soreness, her predictions were fairly accurate - at least better than all machine learning models are simply choosing the mean. <br> When it comes to the different models, standard random forest performed best for overall fatigue and muscle tiredness, lasso worked best for muscle soreness. To understand better what is going on we can take a look a the most relevant predictors in the lasso model as well as the SHAP values of variables in the random forest model: <ul> <li> Self predicted Fatigue - Johanna's prediction of her fatigue level was the most relevant predictor for the actual experienced fatigue (and was also a relevant predictor for muscle sorness & tiredness), indicating that she did have some intuition about how she would feel the next day. </li> <li> Doing HITT, cycling & weightlifting was(non-surprisngly) a relevant predictor for muslce soreness on the next day. Interestingly, however these activiteis did not play a large role in prediction levels of muscle tiredness. </li> <li> 'I felt fit' was negatively correlated with muscle tiredness, i.e. days when Johanna felt very active or fit were often followed by days with high levels of muscle tiredness.</li> <li> Self predicted muscle soreness was a good predictor of actual experienced muscle soreness and tiredness on the next day. However, predicted muscle tiredness was not relevant, indicating that Johanna was better at predicting her levels of muscle soreness compared to muscle tiredness. </li></ul>"
-} 
+// pick person 
+
+
 
 
 let modelInfo = {"Lasso": "Lasso Regression - A fairly simple, non-temporal model - a specific day's fatigue level is regressed on survey information from the day before",
@@ -452,26 +456,27 @@ let modelInfo = {"Lasso": "Lasso Regression - A fairly simple, non-temporal mode
 
 }
 ```
-
+## Predictions for ${pickPerson}
+### Models
 ${pickModelInput}
 
-## Model Selected: ${pickModel}
+### Model Selected: ${pickModel}
 ${modelInfo[pickModel]}
 
 <div class="grid grid-cols-3">
 
  <div class="card">
  <h3> Overall Fatigue</h3>
-${resize((width) => PredictionPlot(pickModel, 'Overall Fatigue',width))}
+${resize((width) => PredictionPlot(predictions2, pickModel, 'Overall Fatigue',width))}
 
   </div>
 <div class="card">
 <h3> Muscle Soreness </h3>
-${resize((width) => PredictionPlot(pickModel, 'Muscle Soreness',width))}
+${resize((width) => PredictionPlot(predictions2, pickModel, 'Muscle Soreness',width))}
 </div>
 <div class="card">
 <h3> Muscle Tiredness </h3>
-${resize((width) => PredictionPlot(pickModel, 'Muscle Tiredness',width))}
+${resize((width) => PredictionPlot(predictions2, pickModel, 'Muscle Tiredness',width))}
 
 </div>
 
@@ -481,8 +486,18 @@ ${resize((width) => PredictionPlot(pickModel, 'Muscle Tiredness',width))}
 ### What does all of this tell us?
 Well... it seems like fatigue levels and behavior are not too much indicative of the next days' fatigue levels.
 
-<div id='text-container'>
+#### Amanda
+Generally speaking, Amanda's predictions of her muslce soreness & tiredness levels for the next days, were slightly worse than just always predicting the mean level observed within the previous month. For the overall fatigue level her own predictions were slightly better - mostly Amanda is a bit too pessimistic.  <br> When it comes to the different models, in terms of absolute error, all of them perform worse than just always predicting the mean. <br>
 
+#### Johanna
+Generally speaking, Johanna's own predictions for overall fatigue and muscle tiredness were worse than always just predicting the mean. For muscle soreness, her predictions were fairly accurate - at least better than all machine learning modelsor simply choosing the mean. <br> When it comes to the different models, standard random forest performed best for overall fatigue and muscle tiredness. However, it only slightly outperformed always predicting the mean value. While it was quite a bit better than Johanna's own predictions, looking at the SHAP values tells us that Johanna's prediction for the next day nonetheless was the most important variable for predicting. For muscle tiredness also scoring high on the item 'I felt fit' actually increased the likelihood of high muscle tiredness the next day, indicating that feeling fit and potentially moving a lot might have negative effects on muscular fitness the day after. For muscle soreness, lasso regression performed best - looking at the coefficients tells us that, somewhat non-surprisingly, doing HITT exercise was the most relevant predictor of muscle soreness.
+Of course there could be different reasons why the machine learning models are not really good at predicting:
+<ul>
+<li> <strong> The things measured in the survey are not relevant: </strong> It could be that there is just not a lot of predictive value in the survey data, i.e. the variables that we have collected are not related to the next days. This means that (1) the subjective level of fatigue and muscle impairment on one day is not very much related to the levels experienced on the next day. Looking at the auto-correlations (code for plotting those is included in the <a href='/code'> code </a>), this can be confirmed - while there is more auto-correlation than one would expect from a random walk, there is only a very weak correlation (~0.2) for muscle impairment and inconsistent correlations for the fatigue measure. Further, (2) the other collected variables also don't play a big role for determining fatigue and muscle impairment, i.e. whether Amanda did sports, drank alcohol and/or a lot of coffee was not particularly relevant for her wellbeing on the next day. This means that there is probably other factors determining this - these could be some factors that we have overlooked (e.g. nutrition, weather) or factors that are hard to quantify (e.g. stress, mood). Also, considering our small sample size, measurement errors and randomness probably played a big role as well. </li>
+<li> <strong> We did't pick the 'correct' prediction models or made a mistake: </strong> While we did our best in trying out different, commonly used frameworks there, of course, exist other models, different ways of pre-processing, different hyperparameter settings etc. that could have resulted in different outcomes - and who knows - maybe been doing a better job in making sense of the collected data. Additionally, there is also still the possbility that we made some errors along the way - feel free to look at our <a href='/code'> code </a> and let us know if you spot any.</li>
+
+<li> <strong> It's just unpredictable: </strong> Maybe, even if we could gather all the data there is we would still not be able to predict subjective experiences of fatigue and muslce impairment, i.e. there is too much randomness involved to make any sensible prediciton.</li>
+</ul>
 
 </div>
 
@@ -585,12 +600,11 @@ function FeaturesPlot(data) {
   return Plot.plot({
     //axis: null,
       //height: 150,
-     // width: 600,
+      width: width/2,
        grid: true,
   marginRight: 60,
   marginBottom:60,
   fy:{label:null},
-  y:{axis:null},
   facet: {data: data, y: "variable",  x:'Signal Type', fontSize: 35,style: {
     fontSize: 30,
   }},
@@ -611,16 +625,57 @@ function FeaturesPlot(data) {
     ]
   })
 }
-
 ```
 
 
 <div class="grid grid-cols-2">
 <div>
-<h3>Feature Extraction </h3>
+<h3>Feature based prediction </h3>
+<p>In the next steps, we extracted features, i.e. transformations of the signal based on the features that have been reported to be predictive of muscular fatigue in <a href="/research">previous studies</a>. Those were always extracted for sub-signals of a length of 250ms (as recommended by previous <a href="/research">literature</a>), i.e. each measurement recording was 'chopped up' into many smaller instances. We used those to train two different types of models: a neural network and a random forest model. Both were trained to predict for every sub-sequence and the final result, i.e. the prediction of fatigue for a particular day as obtained by averaging over all the predictions for that day based on each subsequence. Apart from the features extracte from the signal the models were also given indicators for which interval of the recording a subsequence belonged to (e.g. wallsit) and whether the recording had been created in the morning or evening.
+
+
+</p>
 
 </div>
 <div>
  ${resize((width) =>FeaturesPlot(SignalFeatures,width))}
  </div>
   </div>
+
+
+```js
+
+// function to correctly process prediction data
+
+let predictionsSignal = FileAttachment('data/amanda_signal_predictions.csv')
+  .csv({ typed: true })
+  .then(D => D.map(coerceRowPred))
+```
+```js
+let predictionsSignal2= predictionsSignal.filter(d => d.person === pickPerson)
+
+// pick model name
+const pickModelInputSignal = Inputs.radio(['Random forest','Neural network','Always predicting the mean'], { value: 'Random forest' })
+const pickModelSignal = Generators.input(pickModelInputSignal)
+```
+
+${pickModelInputSignal}
+
+<div class="grid grid-cols-3">
+
+ <div class="card">
+ <h3> Overall Fatigue</h3>
+${resize((width) => PredictionPlot(predictionsSignal2,pickModelSignal, 'Overall Fatigue',width))}
+
+  </div>
+<div class="card">
+<h3> Muscle Soreness </h3>
+${resize((width) => PredictionPlot(predictionsSignal2,pickModelSignal, 'Muscle Soreness',width))}
+</div>
+<div class="card">
+<h3> Muscle Tiredness </h3>
+${resize((width) => PredictionPlot(predictionsSignal2,pickModelSignal, 'Muscle Tiredness',width))}
+
+</div>
+
+</div>

@@ -17,7 +17,7 @@ title: Sensor Kit
 
 
 
-<img src="images/sensorkit.png" alt="drawing" width="1000"/>
+<img src="images/sensorkit.png" alt="drawing" width="100%"/>
 
 
 ## Links to used components:
