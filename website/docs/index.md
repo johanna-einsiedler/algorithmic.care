@@ -248,7 +248,7 @@ html {
   <video src="images/watches.mp4" id='myVideo' type="video/mp4" autoplay muted loop controls width='100%' ></video>
   <div class="content">
   <div width ='90%'>
-  <h1 style='color:#636160'>DO ALGORITMS CARE?</h1>
+  <h1 style='color:#636160'>DO ALGORITHMS CARE?</h1>
   </div>
   <a href="#section2">  <i class="arrow down"></i> </a>
   </div>

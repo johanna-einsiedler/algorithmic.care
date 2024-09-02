@@ -343,7 +343,7 @@ let maxDate = Math.max(...predictions2.map(obj => obj.date))
 let minDate = Math.min(...predictions2.map(obj => obj.date))
 
 // function for prediction  lineplot
-function PredictionPlot(predictions, model, variable, width) {
+function PredictionPlot(predictions, model, variable, width, dataFiltered, dataTrue) {
   return Plot.plot({
     x: {
       tickFormat: d3.utcFormat('%b %e'),
@@ -467,38 +467,32 @@ ${modelInfo[pickModel]}
 
  <div class="card">
  <h3> Overall Fatigue</h3>
-${resize((width) => PredictionPlot(predictions2, pickModel, 'Overall Fatigue',width))}
+${resize((width) => PredictionPlot(predictions2, pickModel, 'Overall Fatigue',width, dataFiltered, dataTrue))}
 
   </div>
 <div class="card">
 <h3> Muscle Soreness </h3>
-${resize((width) => PredictionPlot(predictions2, pickModel, 'Muscle Soreness',width))}
+${resize((width) => PredictionPlot(predictions2, pickModel, 'Muscle Soreness',width, dataFiltered, dataTrue))}
 </div>
 <div class="card">
 <h3> Muscle Tiredness </h3>
-${resize((width) => PredictionPlot(predictions2, pickModel, 'Muscle Tiredness',width))}
+${resize((width) => PredictionPlot(predictions2, pickModel, 'Muscle Tiredness',width, dataFiltered, dataTrue))}
 
 </div>
 
 </div>
 
-## Discussion
-### What does all of this tell us?
+## Results
 Well... it seems like fatigue levels and behavior are not too much indicative of the next days' fatigue levels.
 
-#### Amanda
+### Amanda
 Generally speaking, Amanda's predictions of her muslce soreness & tiredness levels for the next days, were slightly worse than just always predicting the mean level observed within the previous month. For the overall fatigue level her own predictions were slightly better - mostly Amanda is a bit too pessimistic.  <br> When it comes to the different models, in terms of absolute error, all of them perform worse than just always predicting the mean. <br>
 
-#### Johanna
+### Johanna
 Generally speaking, Johanna's own predictions for overall fatigue and muscle tiredness were worse than always just predicting the mean. For muscle soreness, her predictions were fairly accurate - at least better than all machine learning modelsor simply choosing the mean. <br> When it comes to the different models, standard random forest performed best for overall fatigue and muscle tiredness. However, it only slightly outperformed always predicting the mean value. While it was quite a bit better than Johanna's own predictions, looking at the SHAP values tells us that Johanna's prediction for the next day nonetheless was the most important variable for predicting. For muscle tiredness also scoring high on the item 'I felt fit' actually increased the likelihood of high muscle tiredness the next day, indicating that feeling fit and potentially moving a lot might have negative effects on muscular fitness the day after. For muscle soreness, lasso regression performed best - looking at the coefficients tells us that, somewhat non-surprisingly, doing HITT exercise was the most relevant predictor of muscle soreness.
-Of course there could be different reasons why the machine learning models are not really good at predicting:
-<ul>
-<li> <strong> The things measured in the survey are not relevant: </strong> It could be that there is just not a lot of predictive value in the survey data, i.e. the variables that we have collected are not related to the next days. This means that (1) the subjective level of fatigue and muscle impairment on one day is not very much related to the levels experienced on the next day. Looking at the auto-correlations (code for plotting those is included in the <a href='/code'> code </a>), this can be confirmed - while there is more auto-correlation than one would expect from a random walk, there is only a very weak correlation (~0.2) for muscle impairment and inconsistent correlations for the fatigue measure. Further, (2) the other collected variables also don't play a big role for determining fatigue and muscle impairment, i.e. whether Amanda did sports, drank alcohol and/or a lot of coffee was not particularly relevant for her wellbeing on the next day. This means that there is probably other factors determining this - these could be some factors that we have overlooked (e.g. nutrition, weather) or factors that are hard to quantify (e.g. stress, mood). Also, considering our small sample size, measurement errors and randomness probably played a big role as well. </li>
-<li> <strong> We did't pick the 'correct' prediction models or made a mistake: </strong> While we did our best in trying out different, commonly used frameworks there, of course, exist other models, different ways of pre-processing, different hyperparameter settings etc. that could have resulted in different outcomes - and who knows - maybe been doing a better job in making sense of the collected data. Additionally, there is also still the possbility that we made some errors along the way - feel free to look at our <a href='/code'> code </a> and let us know if you spot any.</li>
 
-<li> <strong> It's just unpredictable: </strong> Maybe, even if we could gather all the data there is we would still not be able to predict subjective experiences of fatigue and muslce impairment, i.e. there is too much randomness involved to make any sensible prediciton.</li>
-</ul>
 
+<i> Note: We also tested a standard linear regression model but it performed even worse than any of the more complex models, thus results are not includeded here. However, it is included in the <a href='/code'> code </a>. </i>
 </div>
 
 
@@ -569,16 +563,16 @@ function EMGPlot(data, title,width) {
 <div class="grid grid-cols-2">
 <div>
 
-## Using Muscle Data
+# Predictions based on muscle data
 
 In addition to the daily survey data, we also collected sensor data about muscle activity twice a day, using an <a href='/sensor-kit'> EMG & MMG sensor kit </a>, following a strict <a href='/protocol'> protocol </a>. A large body of literature has been trying to use these types of data to assess and/or predict (muscle) fatigue (see <a href='https://dl.acm.org/doi/10.1145/3648679'>here </a> for a great literature review or <a href="/research">here </a> for our summary) - with varying success.
 
 Based on the existing literature, we developed a protocol that we hoped would allow us to gather data with high enough quality to be of use while still being short and easy to follow such that we could integrate it in our daily schedule.
 
-### Pre-Processing
+## Pre-Processing
 
-In a first step, the EMG and MMG data was pre-processed. In this case we (1) substracted the mean and applied a bandpass filter with a lower bound of 50 and an upper bound 450 Hz, (2) rectified the signal and (3) performed amplitude normalization. The last plot also shows the starting points of the different phases in the <a href='/protocol'> protocol </a>, where 'M' stands for muscle contraction.
-
+In a first step, the EMG and MMG data was pre-processed. In this case we (1) substracted the mean and applied a bandpass filter with a lower bound of 50 and an upper bound 450 Hz, (2) rectified the signal and (3) performed amplitude normalization. The last plot also shows the starting points of the different phases in the <a href='/protocol'> protocol </a>, where 'M' stands for muscle contraction. <br> 
+In the next steps, we extracted features, i.e. transformations of the signal based on the features that have been reported to be predictive of muscular fatigue in <a href="/research">previous studies</a>. Those were always extracted for sub-signals of a length of 250ms (as recommended by previous <a href="/research">literature</a>), i.e. each measurement recording was 'chopped up' into many smaller instances. 
 </div>
 <div>
  ${resize((width) => EMGPlot(rawEMGExample,'Raw signal', width))}
@@ -630,9 +624,11 @@ function FeaturesPlot(data) {
 
 <div class="grid grid-cols-2">
 <div>
-<h3>Feature based prediction </h3>
-<p>In the next steps, we extracted features, i.e. transformations of the signal based on the features that have been reported to be predictive of muscular fatigue in <a href="/research">previous studies</a>. Those were always extracted for sub-signals of a length of 250ms (as recommended by previous <a href="/research">literature</a>), i.e. each measurement recording was 'chopped up' into many smaller instances. We used those to train two different types of models: a neural network and a random forest model. Both were trained to predict for every sub-sequence and the final result, i.e. the prediction of fatigue for a particular day as obtained by averaging over all the predictions for that day based on each subsequence. Apart from the features extracte from the signal the models were also given indicators for which interval of the recording a subsequence belonged to (e.g. wallsit) and whether the recording had been created in the morning or evening.
 
+<h3> Predictions </h3>
+ We used those to train two different types of models: a neural network and a random forest model. Both were trained to predict for every sub-sequence and the final result, i.e. the prediction of fatigue for a particular day as obtained by averaging over all the predictions for that day based on each subsequence. Apart from the features extracte from the signal the models were also given indicators for which interval of the recording a subsequence belonged to (e.g. wallsit) and whether the recording had been created in the morning or evening.
+<h2> Results </h2>
+Overall, the muscle data based models performed as badly as the models based on the survey data and our own predictions. There are existing studies using EMG and MMG data to predict (muscular fatigue), however, all of the ones we found were focused on the particular moment of data collection, i.e. predicting e.g. the onset of fatigue during an exercise or contraction based on real-time EMG measurements.
 
 </p>
 
@@ -658,24 +654,46 @@ let predictionsSignal2= predictionsSignal.filter(d => d.person === pickPerson)
 const pickModelInputSignal = Inputs.radio(['Random forest','Neural network','Always predicting the mean'], { value: 'Random forest' })
 const pickModelSignal = Generators.input(pickModelInputSignal)
 ```
+```js
 
+const dataFilteredSignal = predictionsSignal2.filter(d => d.model === pickModelSignal)
+const dataTrueSignal = predictionsSignal2.filter(d => d.model === 'Ground Truth')
+```
+## Predictions for ${pickPerson}
+### Models
 ${pickModelInputSignal}
 
 <div class="grid grid-cols-3">
 
  <div class="card">
  <h3> Overall Fatigue</h3>
-${resize((width) => PredictionPlot(predictionsSignal2,pickModelSignal, 'Overall Fatigue',width))}
+${resize((width) => PredictionPlot(predictionsSignal2,pickModelSignal, 'Overall Fatigue',width,dataFilteredSignal, dataTrueSignal))}
 
   </div>
 <div class="card">
 <h3> Muscle Soreness </h3>
-${resize((width) => PredictionPlot(predictionsSignal2,pickModelSignal, 'Muscle Soreness',width))}
+${resize((width) => PredictionPlot(predictionsSignal2,pickModelSignal, 'Muscle Soreness',width,dataFilteredSignal, dataTrueSignal))}
 </div>
 <div class="card">
 <h3> Muscle Tiredness </h3>
-${resize((width) => PredictionPlot(predictionsSignal2,pickModelSignal, 'Muscle Tiredness',width))}
+${resize((width) => PredictionPlot(predictionsSignal2,pickModelSignal, 'Muscle Tiredness',width,dataFilteredSignal, dataTrueSignal))}
 
 </div>
 
 </div>
+
+
+
+<h2> Discussion </h2>
+Of course there could be different reasons why we aren't able to predict next day fatigue very well:
+<ul>
+<li> <strong> The things measured in the survey are not relevant: </strong> It could be that there is just not a lot of predictive value in the survey data, i.e. the variables that we have collected are not related to the fatigue levels of the next days. This means that (1) the subjective level of fatigue and muscle impairment on one day is not very much related to the levels experienced on the next day. Looking at the auto-correlations (code for plotting those is included in the <a href='/code'> code </a>), this can be confirmed - while there is more auto-correlation than one would expect from a random walk, there is only a very weak correlation (~0.2) for muscle impairment and inconsistent correlations for the fatigue measure. Further, (2) the other collected variables also don't play a big role for determining fatigue and muscle impairment, i.e. whether we did sports, drank alcohol and/or a lot of coffee was not particularly relevant for our wellbeing on the next day. This means that there is probably other factors determining this - these could be some factors that we have overlooked (e.g. nutrition, weather) or factors that are hard to quantify (e.g. stress, mood).  </li>
+<li> <strong> The sample size is just too small: </strong> All of the relationships we are trying to analyse are at best probablistic, i.e. there for sure does not exist a deterministic 'law' like e.g. sleeping less than 6 hours always results in a fatigue level higher than 5. What is more realistic is that sleeping less than 6 hours will make it <i> more likely </i> that we observe higher fatigue levels the next day. However, due to this high uncertainty level and interactions of variables, we might just not have enough power to detect relationships, i.e. maybe there are small to medium effects and if instead  of 35 days we had data collected for a whole year, models might be able to pick up those patterns.</li>
+<li> <strong> We did't pick the 'correct' prediction models or made a mistake: </strong> While we did our best in trying out different, commonly used frameworks there, of course, exist other models, different ways of pre-processing, different hyperparameter settings etc. that could have resulted in different outcomes - and who knows - maybe been doing a better job in making sense of the collected data. Both of us are far from being experts in signal processing / machine learning / medicine etc. - while we certainly took a deep dive into these topics, there anyways could have been crucical factors that we haven't taken into account. Additionally, there is also still the possbility that we made some errors along the way - feel free to look at our <a href='/code'> code </a> and let us know if you spot any.</li>
+
+<li> <strong> It's just unpredictable: </strong> Maybe, even if we could gather all the data there is we would still not be able to predict subjective experiences of fatigue and muscle impairment, i.e. there is too much randomness involved to make any sensible prediction.</li>
+</ul>
+
+
+Nonetheless, we both learned a lot - about medicine, muscles, our own bodies, data privacy, interactive design and - last but not least - art-science collaboration. However, if you are reading this and have ideas for improvement or think you have spotted some 'mistakes' in the way we approached things (feel free to also take a look at our <a href='/code'> code </a> which is open source), we would be excited to hear and learn from you. You can just send us an <a href="mailto:algorithmic.care@gmail.com">email.</a>
+
