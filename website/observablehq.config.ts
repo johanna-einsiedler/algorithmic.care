@@ -20,6 +20,7 @@ export default {
          {name: "Nectar Core Watch", path: "/watch"},
          {name: "Podcast", path: "/podcast"},
          {name: "Research", path: "/research"},
+         {name: "Readings", path:'/readings'},
          {name: "Code", path: "/code"},
         // {name: "EMG Data", path: "/emg_data"},
        ],

@@ -17,7 +17,7 @@ title: Sensor Kit
 
 
 
-<img src="images/sensorkit.png" alt="drawing" width="100%"/>
+<img src="images/sensorkit-min.png" alt="drawing" width="100%"/>
 
 
 ## Links to used components:
@@ -28,3 +28,8 @@ title: Sensor Kit
 - [Case](https://www.amazon.de/dp/B0CBNB73HP?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)
 - [Alcohol Wipes](https://www.amazon.de/dp/B0994K31K4?ref=ppx_yo2ov_dt_b_fed_asin_title)
 - [Pedometer](https://www.amazon.de/dp/B0C3VYHFK8?ref=ppx_yo2ov_dt_b_fed_asin_title)
+
+## Links to 3D files for cases:
+- [N=2 Case](https://drive.google.com/drive/folders/1jhZXUBkC6Hd1SOzcYKeLuomPw2iSeKpX?usp=drive_link)
+- [N=1 Case](https://drive.google.com/drive/folders/1d2qlsOTB2FfzASZKjm1k2c3UPTfU0xHW?usp=drive_link)
+- [Sensor Case](https://drive.google.com/drive/folders/1P9fQhzfd96_tYhmFVqBwO4rKeWQboXob?usp=drive_link)

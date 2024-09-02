@@ -17,7 +17,7 @@ title: Sensor Kit
 
 
 
-<img src="images/watch.png" alt="drawing" width="100%"/>
+<img src="images/watch-min.png" alt="drawing" width="100%"/>
 
 ## Links to used components:
 ### Basic watch
@@ -35,3 +35,6 @@ title: Sensor Kit
 - [Pulse Oximeter Sensor Wireling](https://tinycircuits.com/products/pulse-oximetry-sensor-wireling?omnisendContactID=667715b8e6a47a7272b143f0&utm_campaign=automation%3A+ORDER+CONFIRMATION+%285e7d25c44c7fa442ebf999c8%29&utm_content=5e7d25c44c7fa442ebf999c9&utm_medium=email&utm_source=omnisend)
 - [Accelerometer Wireling](https://tinycircuits.com/products/accelerometer-wireling-bma250?omnisendContactID=667715b8e6a47a7272b143f0&utm_campaign=automation%3A+ORDER+CONFIRMATION+%285e7d25c44c7fa442ebf999c8%29&utm_content=5e7d25c44c7fa442ebf999c9&utm_medium=email&utm_source=omnisend)
 - [WiFi TinyShield (ATWINC1500)](https://tinycircuits.com/products/wifi-tinyshield-atwinc1500?omnisendContactID=667715b8e6a47a7272b143f0&utm_campaign=automation%3A+ORDER+CONFIRMATION+%285e7d25c44c7fa442ebf999c8%29&utm_content=5e7d25c44c7fa442ebf999c9&utm_medium=email&utm_source=omnisend)
+
+## Watch bands
+- [Watch bands](https://www.amazon.de/EWENYS-Universal-Silicone-Compatible-Amazfit/dp/B08MVR5KWJ?ref_=ast_sto_dp&th=1&psc=1)
