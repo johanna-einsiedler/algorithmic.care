@@ -4,7 +4,14 @@ title: About
 ---
 
 # About the project
-'Do Algorithms Care?' is an interdisciplinary collaboration between artist Amanda Bennetts (AU) and data scientist Johanna Einsiedler (AT). At the core of this project is an N=1 study, typically challenged in scientific circles for its limited generalizability, yet here serves as a critical methodological pivot. Using a DIY smartwatch and EMG (electromyography) and MMG (mechanomyogram) sensor kits, the duo engage in self-monitoring to collect their physiological data. This personalized data collection reflects a methodological shift in research practices, emphasizing the need for individual agency to manage and use biodata. The sensor measurements, smartwatch data and results from a wellbeing questionnaire are fed into a machine-learning model, developed to predict subjective fatigue
+'Do Algorithms Care?' is an interdisciplinary collaboration between artist Amanda Bennetts (AU) and data scientist Johanna Einsiedler (AT). At the core of this project is an N=1 study, typically challenged in scientific circles for its limited generalizability, yet here serves as a critical methodological pivot. Using a DIY smartwatch and EMG (electromyography) and MMG (mechanomyogram) sensor kits, the duo engage in self-monitoring to collect their physiological data. This personalized data collection reflects a methodological shift in research practices, emphasizing the need for individual agency to manage and use biodata. The sensor measurements, smartwatch data and results from a wellbeing questionnaire are fed into a machine-learning model, developed to predict subjective fatigue.
+
+
+  <center>
+<p> <emph> Want to stay updated? </emp> </p>
+<iframe src="https://algorithmiccare.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+</center>
+<br>
 
 ## Project Beginnings
 Amanda launched the project as a FOUNDING LAB Fall term project to explore AI's potential in managing her recently diagnosed rare muscle disease. By collecting and analyzing her own biodata using wearable technology, she aimed to gain specific insights that could help her better understand and manage her condition. This approach allowed her to combine artistic and scientific methods, questioning the effectiveness and ethics of AI in healthcare and wellness industries. Additionally, Amanda was interested in whether self-tracking offers real control over one's health or if it paradoxically limits it, exploring if it expands bodily knowledge or confines it within data metrics. 

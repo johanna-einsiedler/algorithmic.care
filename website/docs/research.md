@@ -298,7 +298,7 @@ Most of the feature extraction was carried out using the package named [Neurokit
 
 
 
-## [Yaman, 2019](10.1155/2019/9152506)
+## [Yaman, 2019](https://pubmed.ncbi.nlm.nih.gov/31828145/)
 *Yaman E, Subasi A. Comparison of Bagging and Boosting Ensemble Machine Learning Methods for Automated EMG Signal Classification. Biomed Res Int. 2019 Oct 31;2019:9152506. doi: 10.1155/2019/9152506. PMID: 31828145; PMCID: PMC6885261.*
 
 ### Task

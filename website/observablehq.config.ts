@@ -22,6 +22,8 @@ export default {
          {name: "Research", path: "/research"},
          {name: "Readings", path:'/readings'},
          {name: "Code", path: "/code"},
+         {name: "Get in touch", path: "/contact"},
+
         // {name: "EMG Data", path: "/emg_data"},
        ],
   
@@ -29,7 +31,7 @@ export default {
      }
    ],
     style: "styles.css",
-    pager: false
+    pager: false,
 
 
 
@@ -42,7 +44,8 @@ export default {
   // Some additional configuration options and their defaults:
   // theme: "default", // try "light", "dark", "slate", etc.
   // header: "", // what to show in the header (HTML)
-  // footer: "Built with Observable.", // what to show in the footer (HTML)
+  footer: `<center><p>Want to stay in touch?<br> <a href='mailto:algorithmic.care@gmail.com'> Write us an email</a> or sign up to our email list.</p> <iframe src="https://algorithmiccare.substack.com/embed" width="400" height="100" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe></cemter>`
+   // what to show in the footer (HTML)
   // toc: true, // whether to show the table of contents
   // pager: true, // whether to show previous & next links in the footer
   // root: "docs", // path to the source root for preview
