@@ -24,6 +24,7 @@ title: Sensor Kit
 [Screen Setup Tutorial](https://learn.tinycircuits.com/Processors/TinyScreen%2B_Setup_Tutorial/)
 - [TinyScreen+ (Processor, OLED & USB in one)](https://tinycircuits.com/products/tinyscreenplus?omnisendContactID=667715b8e6a47a7272b143f0&utm_campaign=automation%3A+ORDER+CONFIRMATION+%285e7d25c44c7fa442ebf999c8%29&utm_content=5e7d25c44c7fa442ebf999c9&utm_medium=email&utm_source=omnisend)
 - [Lithium Ion Polymer Battery - 3.7V 150mAh](https://tinycircuits.com/products/lithium-ion-polymer-battery-3-7v-150mah?_pos=1&_sid=4507ecab2&_ss=r)
+- [3D Files for Watchcase](https://drive.google.com/drive/folders/1AFYuaRd69hSPbMeXQXw_nuh95B2V853c?usp=sharing)
 
 ### Additional components that can be added for data collection capacity:
 [Instructions for building a fitness tracker](https://learn.tinycircuits.com/Wireling-Projects/Custom-Fitness-Tracker-Tutorial/)

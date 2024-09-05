@@ -10,6 +10,8 @@ Let us know in case you have any feedback (positive or negative), questions abou
 
 If you are interested in the watches you can also send us an email - since many people have been asking, we are currently looking into potential ways to produce a small batch of them.
 
+You can also find us on instagram: <a href="https://www.instagram.com/amanda_bennetts_/">Amanda </a> and <a href="https://www.instagram.com/___jae.data___/"> Johanna </a>
+
 If you want to stay updated about our project you can also join our mailing list:
 
 
@@ -19,4 +21,4 @@ If you want to stay updated about our project you can also join our mailing list
 </center>
 
 
-You can also find us on instagram: <a href="https://www.instagram.com/amanda_bennetts_/">Amanda </a> and <a href="https://www.instagram.com/___jae.data___/"> Johanna </a>
+
