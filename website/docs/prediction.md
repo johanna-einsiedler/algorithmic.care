@@ -569,10 +569,7 @@ In addition to the daily survey data, we also collected sensor data about muscle
 
 Based on the existing literature, we developed a protocol that we hoped would allow us to gather data with high enough quality to be of use while still being short and easy to follow such that we could integrate it in our daily schedule.
 
-## Pre-Processing
 
-In a first step, the EMG and MMG data was pre-processed. In this case we (1) substracted the mean and applied a bandpass filter with a lower bound of 50 and an upper bound 450 Hz, (2) rectified the signal and (3) performed amplitude normalization. The last plot also shows the starting points of the different phases in the <a href='/protocol'> protocol </a>, where 'M' stands for muscle contraction. <br> 
-In the next steps, we extracted features, i.e. transformations of the signal based on the features that have been reported to be predictive of muscular fatigue in <a href="/research">previous studies</a>. Those were always extracted for sub-signals of a length of 250ms (as recommended by previous <a href="/research">literature</a>), i.e. each measurement recording was 'chopped up' into many smaller instances. 
 </div>
 <div>
  ${resize((width) => EMGPlot(rawEMGExample,'Raw signal', width))}
@@ -624,7 +621,10 @@ function FeaturesPlot(data) {
 
 <div class="grid grid-cols-2">
 <div>
+<h3>Pre-Processing </h3>
 
+In a first step, the EMG and MMG data was pre-processed. In this case we (1) substracted the mean and applied a bandpass filter with a lower bound of 50 and an upper bound 450 Hz, (2) rectified the signal and (3) performed amplitude normalization. The last plot also shows the starting points of the different phases in the <a href='/protocol'> protocol </a>, where 'M' stands for muscle contraction. <br> 
+In the next steps, we extracted features, i.e. transformations of the signal based on the features that have been reported to be predictive of muscular fatigue in <a href="/research">previous studies</a>. Those were always extracted for sub-signals of a length of 250ms (as recommended by previous <a href="/research">literature</a>), i.e. each measurement recording was 'chopped up' into many smaller instances. 
 <h3> Predictions </h3>
  We used those to train two different types of models: a neural network and a random forest model. Both were trained to predict for every sub-sequence and the final result, i.e. the prediction of fatigue for a particular day as obtained by averaging over all the predictions for that day based on each subsequence. Apart from the features extracte from the signal the models were also given indicators for which interval of the recording a subsequence belonged to (e.g. wallsit) and whether the recording had been created in the morning or evening.
 <h2> Results </h2>
